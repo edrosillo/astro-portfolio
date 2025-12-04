@@ -1,0 +1,199 @@
+---
+import { getCollection } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+import GlitchText from "../../components/GlitchText.astro";
+import ConsolePlayer from "../../components/ConsolePlayer.astro";
+
+export async function getStaticPaths() {
+    const projects = await getCollection("projects");
+    return projects.map((project) => ({
+        params: { slug: project.slug },
+        props: project,
+    }));
+}
+
+const project = Astro.props;
+const { Content } = await project.render();
+---
+
+<MainLayout title={project.data.title}>
+    <main class="container project-detail">
+        <nav class="project-nav">
+            <a href={`/${project.data.category}`} class="back-link">
+                <span class="arrow">←</span> BACK TO {
+                    project.data.category.toUpperCase()
+                }
+            </a>
+        </nav>
+
+        <article class="case-study">
+            <header class="project-header">
+                <div class="header-content">
+                    <GlitchText
+                        text={project.data.title}
+                        class="project-title"
+                    />
+                    <div class="meta">
+                        <span class="date"
+                            >{project.data.pubDate.toLocaleDateString()}</span
+                        >
+                        <div class="tags">
+                            {
+                                project.data.tags.map((tag) => (
+                                    <span class="tag">#{tag}</span>
+                                ))
+                            }
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="media-container">
+                {
+                    project.data.videoId ? (
+                        <ConsolePlayer videoId={project.data.videoId} />
+                    ) : (
+                        project.data.heroImage && (
+                            <div class="hero-image">
+                                <img
+                                    src={project.data.heroImage}
+                                    alt={project.data.title}
+                                />
+                            </div>
+                        )
+                    )
+                }
+            </div>
+
+            <div class="content-wrapper">
+                <div class="content">
+                    <Content />
+                </div>
+            </div>
+        </article>
+
+        <div class="footer-nav">
+            <a href="/" class="home-link">RETURN TO HOME</a>
+        </div>
+    </main>
+</MainLayout>
+
+<style>
+    .project-detail {
+        padding-top: 4rem;
+    }
+
+    .project-nav {
+        margin-bottom: 4rem;
+    }
+
+    .back-link {
+        font-family: var(--font-heading);
+        font-size: 0.8rem;
+        color: var(--color-text-muted);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .back-link:hover {
+        color: var(--color-primary);
+    }
+
+    .project-header {
+        margin-bottom: 3rem;
+        border-bottom: 1px solid var(--color-dim);
+        padding-bottom: 2rem;
+    }
+
+    .project-title {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        line-height: 1.1;
+    }
+
+    .meta {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        font-family: var(--font-body);
+        color: var(--color-text-muted);
+    }
+
+    .tag {
+        color: var(--color-accent);
+        margin-right: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .media-container {
+        margin-bottom: 4rem;
+    }
+
+    .hero-image {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .content-wrapper {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .content {
+        font-family: var(--font-body);
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--color-text-muted);
+    }
+
+    /* Markdown Content Styles */
+    .content :global(h1),
+    .content :global(h2),
+    .content :global(h3) {
+        color: var(--color-text);
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+        font-family: var(--font-heading);
+        letter-spacing: -0.02em;
+    }
+
+    .content :global(p) {
+        margin-bottom: 1.5rem;
+    }
+
+    .content :global(ul) {
+        padding-left: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .content :global(li) {
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-nav {
+        margin-top: 6rem;
+        text-align: center;
+        padding-top: 3rem;
+        border-top: 1px solid var(--color-dim);
+    }
+
+    .home-link {
+        font-family: var(--font-heading);
+        font-size: 0.9rem;
+        color: var(--color-text);
+        border-bottom: 2px solid transparent;
+        padding-bottom: 0.2rem;
+    }
+
+    .home-link:hover {
+        border-color: var(--color-primary);
+    }
+</style>

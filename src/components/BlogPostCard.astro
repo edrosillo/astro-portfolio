@@ -1,0 +1,94 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+    post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+---
+
+<a href={`/blog/${post.slug}`} class="blog-card fade-in-up">
+    <div class="card-content">
+        <div class="meta">
+            <span class="date">
+                {
+                    post.data.pubDate.toLocaleDateString("en-us", {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
+                    })
+                }
+            </span>
+            <div class="tags">
+                {
+                    post.data.tags
+                        .slice(0, 2)
+                        .map((tag) => <span class="tag">#{tag}</span>)
+                }
+            </div>
+        </div>
+        <h3 class="title">{post.data.title}</h3>
+        <p class="description">{post.data.description}</p>
+        <span class="read-more">READ ARTICLE →</span>
+    </div>
+</a>
+
+<style>
+    .blog-card {
+        display: block;
+        background: var(--color-surface);
+        border: 1px solid var(--color-dim);
+        border-radius: 8px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+    .blog-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--color-primary);
+        box-shadow: 0 10px 30px rgba(0, 255, 255, 0.1);
+    }
+
+    .meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+        font-size: 0.85rem;
+        color: var(--color-text-muted);
+        font-family: var(--font-heading);
+    }
+
+    .tag {
+        color: var(--color-primary);
+        margin-left: 0.5rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: var(--color-text);
+        line-height: 1.2;
+    }
+
+    .description {
+        color: var(--color-text-muted);
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .read-more {
+        font-family: var(--font-heading);
+        font-size: 0.9rem;
+        color: var(--color-primary);
+        opacity: 0.8;
+        transition: opacity 0.3s;
+    }
+
+    .blog-card:hover .read-more {
+        opacity: 1;
+    }
+</style>

@@ -1,0 +1,72 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import BlogPostCard from "../../components/BlogPostCard.astro";
+import GlitchText from "../../components/GlitchText.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog")).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<MainLayout title="Eddie's Portfolio - Blog">
+    <main class="container blog-page">
+        <header class="page-header fade-in-up">
+            <GlitchText text="BLOG" as="h1" class="page-title" />
+            <p class="subtitle">
+                Thoughts on design, code, and everything in between.
+            </p>
+        </header>
+
+        <div class="posts-grid">
+            {posts.map((post) => <BlogPostCard post={post} />)}
+        </div>
+
+        {
+            posts.length === 0 && (
+                <div class="empty-state">
+                    <p>NO POSTS YET...</p>
+                </div>
+            )
+        }
+    </main>
+</MainLayout>
+
+<style>
+    .blog-page {
+        padding-top: 8rem;
+        padding-bottom: 4rem;
+        min-height: 80vh;
+    }
+
+    .page-header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .page-title {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .subtitle {
+        font-family: var(--font-body);
+        font-size: 1.2rem;
+        color: var(--color-text-muted);
+    }
+
+    .posts-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 2rem;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .empty-state {
+        text-align: center;
+        padding: 4rem;
+        color: var(--color-text-muted);
+        font-family: var(--font-heading);
+    }
+</style>

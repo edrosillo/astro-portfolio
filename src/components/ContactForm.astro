@@ -1,0 +1,179 @@
+---
+
+---
+
+<form id="contact-form" class="contact-form">
+    <div class="form-group">
+        <label for="name">NAME</label>
+        <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            placeholder="YOUR NAME"
+        />
+    </div>
+
+    <div class="form-group">
+        <label for="email">EMAIL</label>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="YOUR@EMAIL.COM"
+        />
+    </div>
+
+    <div class="form-group">
+        <label for="message">MESSAGE</label>
+        <textarea
+            id="message"
+            name="message"
+            required
+            rows="5"
+            placeholder="ENTER YOUR MESSAGE..."></textarea>
+    </div>
+
+    <!-- Cloudflare Turnstile Widget -->
+    <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA"></div>
+
+    <button type="submit" class="submit-btn">
+        <span class="btn-text">SEND MESSAGE</span>
+        <span class="btn-icon">→</span>
+    </button>
+
+    <div id="form-status" class="form-status"></div>
+</form>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer
+></script>
+
+<script>
+    const form = document.getElementById("contact-form");
+    const statusDiv = document.getElementById("form-status");
+
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const turnstileToken = formData.get("cf-turnstile-response");
+
+        if (!turnstileToken) {
+            statusDiv.textContent = "Please complete the security check.";
+            statusDiv.className = "form-status error";
+            return;
+        }
+
+        statusDiv.textContent = "SENDING...";
+        statusDiv.className = "form-status sending";
+
+        try {
+            const response = await fetch("/api/submit-contact", {
+                method: "POST",
+                body: formData,
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                statusDiv.textContent = "MESSAGE SENT SUCCESSFULLY!";
+                statusDiv.className = "form-status success";
+                form.reset();
+            } else {
+                statusDiv.textContent =
+                    "ERROR: " + (result.error || "UNKNOWN ERROR");
+                statusDiv.className = "form-status error";
+            }
+        } catch (error) {
+            statusDiv.textContent = "NETWORK ERROR. PLEASE TRY AGAIN.";
+            statusDiv.className = "form-status error";
+        }
+    });
+</script>
+
+<style>
+    .contact-form {
+        max-width: 600px;
+        margin: 0 auto;
+        background: var(--color-surface);
+        padding: 3rem;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .form-group {
+        margin-bottom: 2rem;
+    }
+
+    label {
+        display: block;
+        font-family: var(--font-heading);
+        font-size: 0.9rem;
+        color: var(--color-text-muted);
+        margin-bottom: 0.5rem;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 1rem;
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid #333;
+        border-radius: 4px;
+        color: var(--color-text);
+        font-family: var(--font-body);
+        font-size: 1rem;
+        transition: all 0.3s;
+    }
+
+    input:focus,
+    textarea:focus {
+        outline: none;
+        border-color: var(--color-primary);
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 1rem;
+        background: transparent;
+        border: 1px solid var(--color-primary);
+        color: var(--color-primary);
+        font-family: var(--font-heading);
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .submit-btn:hover {
+        background: var(--color-primary);
+        color: var(--color-bg);
+    }
+
+    .form-status {
+        margin-top: 1.5rem;
+        text-align: center;
+        font-family: var(--font-heading);
+        font-size: 0.9rem;
+        min-height: 1.5rem;
+    }
+
+    .form-status.success {
+        color: var(--color-secondary);
+    }
+    .form-status.error {
+        color: #ff0055;
+    }
+    .form-status.sending {
+        color: var(--color-text-muted);
+    }
+
+    .cf-turnstile {
+        margin-bottom: 2rem;
+    }
+</style>

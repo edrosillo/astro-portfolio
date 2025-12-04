@@ -1,0 +1,54 @@
+---
+import "../styles/global.css";
+
+import NavBar from "../components/NavBar.astro";
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="description"
+			content="Eddie's Portfolio - Multimedia Designer & Web Developer"
+		/>
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<NavBar />
+		<slot />
+		<script>
+			// Global Scroll Observer for Fade In Animations
+			const observerOptions = {
+				root: null,
+				rootMargin: "0px",
+				threshold: 0.1,
+			};
+
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add("visible");
+						observer.unobserve(entry.target);
+					}
+				});
+			}, observerOptions);
+
+			// Observe elements on initial load and after view transitions (if any)
+			document.addEventListener("DOMContentLoaded", () => {
+				document.querySelectorAll(".fade-in-up").forEach((el) => {
+					observer.observe(el);
+				});
+			});
+		</script>
+	</body>
+</html>

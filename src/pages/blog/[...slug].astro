@@ -1,0 +1,167 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+import GlitchText from "../../components/GlitchText.astro";
+
+export async function getStaticPaths() {
+    const posts = await getCollection("blog");
+    return posts.map((post) => ({
+        params: { slug: post.slug },
+        props: post,
+    }));
+}
+type Props = CollectionEntry<"blog">;
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<MainLayout title={post.data.title}>
+    <main class="container post-detail">
+        <div class="back-link">
+            <a href="/blog">← RETURN TO BLOG</a>
+        </div>
+
+        <article class="blog-post">
+            <header class="post-header">
+                <div class="meta">
+                    <span class="date">
+                        {
+                            post.data.pubDate.toLocaleDateString("en-us", {
+                                year: "numeric",
+                                month: "long",
+                                day: "numeric",
+                            })
+                        }
+                    </span>
+                    <span class="separator">/</span>
+                    <span class="author">By {post.data.author}</span>
+                </div>
+
+                <h1 class="post-title">{post.data.title}</h1>
+
+                <div class="tags">
+                    {
+                        post.data.tags.map((tag) => (
+                            <span class="tag">#{tag}</span>
+                        ))
+                    }
+                </div>
+            </header>
+
+            {
+                post.data.heroImage && (
+                    <div class="hero-image">
+                        <img src={post.data.heroImage} alt={post.data.title} />
+                    </div>
+                )
+            }
+
+            <div class="content">
+                <Content />
+            </div>
+        </article>
+    </main>
+</MainLayout>
+
+<style>
+    .post-detail {
+        padding-top: 8rem;
+        padding-bottom: 4rem;
+        max-width: 800px;
+    }
+
+    .back-link {
+        margin-bottom: 3rem;
+    }
+
+    .back-link a {
+        font-family: var(--font-heading);
+        font-size: 0.9rem;
+        color: var(--color-text-muted);
+    }
+
+    .back-link a:hover {
+        color: var(--color-primary);
+    }
+
+    .post-header {
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+
+    .meta {
+        font-family: var(--font-heading);
+        font-size: 0.9rem;
+        color: var(--color-text-muted);
+        margin-bottom: 1rem;
+    }
+
+    .separator {
+        margin: 0 0.5rem;
+        color: var(--color-dim);
+    }
+
+    .post-title {
+        font-size: 3rem;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        color: var(--color-text);
+    }
+
+    .tags {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .tag {
+        color: var(--color-primary);
+        font-family: var(--font-heading);
+        font-size: 0.8rem;
+    }
+
+    .hero-image {
+        margin-bottom: 3rem;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid var(--color-dim);
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .content {
+        font-family: var(--font-body);
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--color-text-muted);
+    }
+
+    /* Markdown Styles */
+    .content :global(h1),
+    .content :global(h2),
+    .content :global(h3) {
+        color: var(--color-text);
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+        font-family: var(--font-heading);
+    }
+
+    .content :global(p) {
+        margin-bottom: 1.5rem;
+    }
+
+    .content :global(a) {
+        color: var(--color-primary);
+        text-decoration: underline;
+    }
+
+    .content :global(strong) {
+        color: var(--color-text);
+        font-weight: 700;
+    }
+</style>

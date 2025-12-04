@@ -1,0 +1,18 @@
+---
+interface Props {
+    text: string;
+    as?: "h1" | "h2" | "h3" | "span";
+    class?: string;
+}
+
+const { text, as: Tag = "h1", class: className } = Astro.props;
+---
+
+<Tag class:list={["glitch", className]} data-text={text}>
+    {text}
+</Tag>
+
+<style>
+    /* Styles are handled in global.css for reusability, 
+       but we can add component-specific overrides here if needed. */
+</style>

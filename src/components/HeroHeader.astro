@@ -1,0 +1,76 @@
+---
+import GlitchText from "./GlitchText.astro";
+---
+
+<header class="hero-header">
+    <div class="watermark">EDDIE</div>
+    <div class="container relative">
+        <div class="hero-content">
+            <div class="fade-in-up" style="transition-delay: 0.1s;">
+                <GlitchText text="Hi, I'm Eddie." as="h1" class="hero-title" />
+            </div>
+            <div class="fade-in-up" style="transition-delay: 0.3s;">
+                <h2 class="hero-subtitle">
+                    Multimedia Designer and Web Developer<br />from Duncan, SC.
+                </h2>
+            </div>
+        </div>
+    </div>
+</header>
+
+<style>
+    .hero-header {
+        padding: 10rem 0 6rem;
+        position: relative;
+        overflow: hidden;
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+    }
+
+    .relative {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+    }
+
+    .watermark {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: var(--font-heading);
+        font-size: 25vw;
+        color: rgba(255, 255, 255, 0.02);
+        pointer-events: none;
+        white-space: nowrap;
+        z-index: 0;
+    }
+
+    .hero-title {
+        font-size: 5rem;
+        margin-bottom: 1.5rem;
+        color: var(--color-text);
+        letter-spacing: -0.05em;
+        line-height: 1.1;
+    }
+
+    .hero-subtitle {
+        font-family: var(--font-body);
+        font-size: 2rem;
+        color: var(--color-primary);
+        font-weight: 400;
+        line-height: 1.4;
+        text-transform: none;
+        max-width: 800px;
+    }
+
+    @media (max-width: 768px) {
+        .hero-title {
+            font-size: 3rem;
+        }
+        .hero-subtitle {
+            font-size: 1.5rem;
+        }
+    }
+</style>

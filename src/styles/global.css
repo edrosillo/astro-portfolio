@@ -1,0 +1,112 @@
+/* Modern Global Styles with Retro Accents */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap');
+
+:root {
+  /* Modern Palette */
+  --color-bg: #0a0a0a;
+  /* Deep Black */
+  --color-surface: #141414;
+  --color-dim: #222222;
+  --color-text: #e0e0e0;
+  --color-text-muted: #a0a0a0;
+
+  /* Retro Accents - Electric Cyan */
+  --color-primary: #00ffff;
+  /* Cyan */
+  --color-secondary: #7000ff;
+  /* Deep Purple */
+  --color-accent: #ffffff;
+  /* White for high contrast */
+
+  /* Fonts */
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+
+  /* Dot Grid Background Pattern */
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+a {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Scroll Animation Utilities */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Glitch Effect (Subtle) */
+.glitch-hover {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-hover:hover {
+  color: var(--color-primary);
+  text-shadow: 2px 0 var(--color-secondary);
+}

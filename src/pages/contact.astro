@@ -1,0 +1,123 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import ContactForm from "../components/ContactForm.astro";
+import GlitchText from "../components/GlitchText.astro";
+---
+
+<MainLayout title="Eddie's Portfolio - Contact">
+    <main class="container contact-page">
+        <header class="page-header fade-in-up">
+            <GlitchText text="GET IN TOUCH" as="h1" class="page-title" />
+            <p class="subtitle">
+                Have a project in mind? Let's build something awesome together.
+            </p>
+        </header>
+
+        <div class="content-grid fade-in-up" style="transition-delay: 0.2s;">
+            <div class="form-section">
+                <ContactForm />
+            </div>
+
+            <aside class="info-section">
+                <div class="info-block">
+                    <h3>EMAIL</h3>
+                    <a href="mailto:rosillo.ed@gmail.com" class="contact-link"
+                        >rosillo.ed@gmail.com</a
+                    >
+                </div>
+
+                <div class="info-block">
+                    <h3>SOCIAL</h3>
+                    <div class="social-list">
+                        <a
+                            href="https://www.github.com/edrosillo"
+                            target="_blank"
+                            class="social-link">GITHUB</a
+                        >
+                        <a
+                            href="https://www.linkedin.com/in/edrosillo"
+                            target="_blank"
+                            class="social-link">LINKEDIN</a
+                        >
+                        <a
+                            href="https://www.instagram.com/ed_rosillo"
+                            target="_blank"
+                            class="social-link">INSTAGRAM</a
+                        >
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <h3>LOCATION</h3>
+                    <p>Duncan, SC</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+</MainLayout>
+
+<style>
+    .contact-page {
+        padding-top: 8rem;
+        padding-bottom: 4rem;
+    }
+
+    .page-header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .page-title {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .subtitle {
+        font-family: var(--font-body);
+        font-size: 1.2rem;
+        color: var(--color-text-muted);
+    }
+
+    .content-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 4rem;
+    }
+
+    @media (max-width: 768px) {
+        .content-grid {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+    }
+
+    .info-section {
+        padding-top: 1rem;
+    }
+
+    .info-block {
+        margin-bottom: 3rem;
+    }
+
+    .info-block h3 {
+        font-size: 1.2rem;
+        color: var(--color-primary);
+        margin-bottom: 1rem;
+    }
+
+    .contact-link,
+    .social-link,
+    .info-block p {
+        font-family: var(--font-body);
+        font-size: 1.1rem;
+        color: var(--color-text);
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    .contact-link:hover,
+    .social-link:hover {
+        color: var(--color-primary);
+        text-decoration: underline;
+    }
+</style>

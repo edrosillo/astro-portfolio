@@ -1,0 +1,114 @@
+---
+const links = [
+    { href: "/", label: "HOME" },
+    { href: "/graphic", label: "GRAPHIC" },
+    { href: "/motion", label: "MOTION" },
+    { href: "/web", label: "WEB" },
+    { href: "/blog", label: "BLOG" },
+    { href: "/contact", label: "CONTACT" },
+];
+
+const { pathname } = Astro.url;
+---
+
+<nav class="navbar">
+    <div class="container nav-container">
+        <a href="/" class="logo">
+            EDDIE<span class="dot">.</span>
+        </a>
+
+        <div class="nav-links">
+            {
+                links.map((link) => (
+                    <a
+                        href={link.href}
+                        class:list={[
+                            "nav-link",
+                            {
+                                active:
+                                    pathname === link.href ||
+                                    (link.href !== "/" &&
+                                        pathname.startsWith(link.href)),
+                            },
+                        ]}
+                    >
+                        {link.label}
+                    </a>
+                ))
+            }
+        </div>
+    </div>
+</nav>
+
+<style>
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background: rgba(10, 10, 10, 0.8);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+
+    .logo {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--color-text);
+        letter-spacing: -0.05em;
+    }
+
+    .dot {
+        color: var(--color-primary);
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .nav-link {
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--color-text-muted);
+        position: relative;
+        padding: 0.5rem 0;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        color: var(--color-text);
+    }
+
+    .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--color-primary);
+        transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+        width: 100%;
+    }
+
+    @media (max-width: 768px) {
+        .nav-links {
+            display: none; /* Mobile menu to be added if requested, keeping it simple for now */
+        }
+    }
+</style>

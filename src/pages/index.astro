@@ -3,16 +3,19 @@ import MainLayout from "../layouts/MainLayout.astro";
 import HeroHeader from "../components/HeroHeader.astro";
 import AboutMe from "../components/AboutMe.astro";
 import GlitchText from "../components/GlitchText.astro";
+import FeaturedWork from "../components/FeaturedWork.astro";
 ---
 
 <MainLayout title="Eddie's Portfolio">
 	<HeroHeader />
 
 	<main class="container">
+		<FeaturedWork />
+
 		<section class="work-section">
 			<header class="section-header fade-in-up">
 				<GlitchText
-					text="SELECTED WORK"
+					text="SERVICES"
 					as="h2"
 					class="section-title"
 				/>

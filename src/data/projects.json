@@ -1,0 +1,83 @@
+[
+  {
+    "title": "JumpStart",
+    "description": "A responsive landing page for a startup accelerator.",
+    "pubDate": "2024-01-15",
+    "category": "web",
+    "heroImage": "/images/projects/jumpstart.png",
+    "liveUrl": "https://edrosillo.github.io/jumpstart/",
+    "tags": ["html", "css"]
+  },
+  {
+    "title": "Fotomatic",
+    "description": "A photography portfolio website featuring a masonry layout.",
+    "pubDate": "2024-02-10",
+    "category": "web",
+    "heroImage": "/images/projects/fotomatic.png",
+    "liveUrl": "https://edrosillo.github.io/fotomatic/",
+    "tags": ["html", "css"]
+  },
+  {
+    "title": "Tea Cozy",
+    "description": "A cozy website for a local tea shop with a focus on branding.",
+    "pubDate": "2024-03-05",
+    "category": "web",
+    "heroImage": "/images/projects/teacozy.png",
+    "liveUrl": "https://edrosillo.github.io/TeaCozy/",
+    "tags": ["html", "css"]
+  },
+  {
+    "title": "Tortoiseshell Optics",
+    "description": "An elegant landing page for a premium eyewear brand.",
+    "pubDate": "2024-03-20",
+    "category": "web",
+    "heroImage": "/images/projects/tortoiseshell.png",
+    "liveUrl": "https://edrosillo.github.io/TortoiseshellOptics/",
+    "tags": ["html", "css"]
+  },
+  {
+    "title": "Colmar Academy",
+    "description": "A comprehensive educational platform landing page.",
+    "pubDate": "2024-04-12",
+    "category": "web",
+    "heroImage": "/images/projects/colmar.png",
+    "liveUrl": "https://edrosillo.github.io/ColmarAcademy/",
+    "tags": ["html", "css", "responsive"]
+  },
+  {
+    "title": "Secret Agent Supply",
+    "description": "A quirky e-commerce layout for secret agent supplies.",
+    "pubDate": "2024-05-01",
+    "category": "web",
+    "heroImage": "/images/projects/secretagent.png",
+    "liveUrl": "https://edrosillo.github.io/secretagentsupply/",
+    "tags": ["html", "css", "responsive"]
+  },
+  {
+    "title": "Jamming",
+    "description": "A React application that interfaces with the Spotify API to create playlists.",
+    "pubDate": "2024-06-15",
+    "category": "web",
+    "heroImage": "/images/projects/jamming.png",
+    "liveUrl": "https://edrosillo-jamming.surge.sh/",
+    "tags": ["react", "api", "javascript"]
+  },
+  {
+    "title": "Ravenous",
+    "description": "A restaurant search application using the Yelp API.",
+    "pubDate": "2024-07-20",
+    "category": "web",
+    "heroImage": "/images/projects/ravenous.png",
+    "liveUrl": "https://edrosillo.github.io/Ravenous/",
+    "tags": ["react", "api", "javascript"]
+  },
+  {
+    "title": "Drum Kit",
+    "description": "An interactive drum kit that plays sounds on key press.",
+    "pubDate": "2024-08-10",
+    "category": "web",
+    "heroImage": "/images/projects/drumkit.png",
+    "liveUrl": "https://edrosillo.github.io/drumkit/",
+    "tags": ["javascript", "dom", "audio"]
+  }
+]

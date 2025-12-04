@@ -11,19 +11,42 @@ import GlitchText from "./GlitchText.astro";
             </div>
             <div class="fade-in-up" style="transition-delay: 0.3s;">
                 <h2 class="hero-subtitle">
-                    Multimedia Designer and Web Developer<br />from Duncan, SC.
+                    Multimedia Designer & <span class="typing-text"></span><span class="cursor">|</span>
                 </h2>
+                <p class="hero-location">Based in Duncan, SC.</p>
+            </div>
+            
+            <div class="scroll-indicator fade-in-up" style="transition-delay: 1s;">
+                <span class="scroll-text">SCROLL_DOWN</span>
+                <div class="scroll-line"></div>
             </div>
         </div>
     </div>
 </header>
+
+<script>
+    const text = "Web Developer";
+    const typingText = document.querySelector('.typing-text');
+    let i = 0;
+
+    function typeWriter() {
+        if (i < text.length && typingText) {
+            typingText.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 100);
+        }
+    }
+    
+    // Start typing after a delay
+    setTimeout(typeWriter, 1000);
+</script>
 
 <style>
     .hero-header {
         padding: 10rem 0 6rem;
         position: relative;
         overflow: hidden;
-        min-height: 80vh;
+        min-height: 90vh;
         display: flex;
         align-items: center;
     }
@@ -48,29 +71,84 @@ import GlitchText from "./GlitchText.astro";
     }
 
     .hero-title {
-        font-size: 5rem;
-        margin-bottom: 1.5rem;
+        font-size: 6rem;
+        margin-bottom: 1rem;
         color: var(--color-text);
         letter-spacing: -0.05em;
-        line-height: 1.1;
+        line-height: 1;
     }
 
     .hero-subtitle {
         font-family: var(--font-body);
-        font-size: 2rem;
-        color: var(--color-primary);
+        font-size: 2.5rem;
+        color: var(--color-text-muted);
         font-weight: 400;
         line-height: 1.4;
         text-transform: none;
-        max-width: 800px;
+        max-width: 900px;
+        margin-bottom: 1rem;
+    }
+    
+    .typing-text {
+        color: var(--color-primary);
+        font-weight: 700;
+    }
+    
+    .cursor {
+        display: inline-block;
+        width: 3px;
+        background-color: var(--color-primary);
+        animation: blink 1s infinite;
+        margin-left: 5px;
+    }
+    
+    @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+    }
+    
+    .hero-location {
+        font-family: var(--font-mono);
+        color: var(--color-accent);
+        font-size: 1rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        opacity: 0.8;
+    }
+    
+    .scroll-indicator {
+        position: absolute;
+        bottom: -100px;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .scroll-text {
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        color: var(--color-text-muted);
+        writing-mode: vertical-rl;
+        letter-spacing: 2px;
+    }
+    
+    .scroll-line {
+        width: 1px;
+        height: 60px;
+        background: linear-gradient(to bottom, var(--color-primary), transparent);
     }
 
     @media (max-width: 768px) {
         .hero-title {
-            font-size: 3rem;
+            font-size: 3.5rem;
         }
         .hero-subtitle {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
+        }
+        .scroll-indicator {
+            display: none;
         }
     }
 </style>

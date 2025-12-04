@@ -12,6 +12,7 @@ const projects = defineCollection({
         heroImage: z.string().optional(),
         category: z.enum(['graphic', 'motion', 'web']),
         videoId: z.string().optional(), // YouTube video ID for motion graphics
+        liveUrl: z.string().url().optional(), // URL for live web projects
         tags: z.array(z.string()).default([]),
     }),
 });

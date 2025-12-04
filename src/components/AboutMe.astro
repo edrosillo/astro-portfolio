@@ -1,5 +1,6 @@
 ---
 import GlitchText from "./GlitchText.astro";
+import SkillsInventory from "./SkillsInventory.astro";
 ---
 
 <section class="about-me">
@@ -9,54 +10,65 @@ import GlitchText from "./GlitchText.astro";
             <div class="decorative-line"></div>
         </header>
 
-        <div class="bio-content fade-in-up" style="transition-delay: 0.2s;">
-            <p>
-                I’m a multimedia designer with over 12 years of experience
-                bridging the gap between creative vision and technical
-                execution. From pixel-perfect print design to immersive web
-                motion, I build digital experiences that leave a lasting
-                impression.
-            </p>
-            <p>
-                My toolkit is vast, but my focus is sharp. I’m a proficient user
-                of the Adobe Creative Suite, with extensive experience in Final
-                Cut, Cinema 4D, and iMovie. On the code side, I speak HTML5,
-                CSS, and Bootstrap fluently, with a working knowledge of
-                JavaScript and Java to bring designs to life.
-            </p>
-            <p>
-                Bilingual in Spanish and English, I thrive in collaborative
-                environments. Most recently, as a Multimedia Producer at a top
-                Fox affiliate, I’ve managed complex projects across multiple
-                departments, consistently delivering on-brand, on-time results
-                that exceed expectations.
-            </p>
-        </div>
+        <div class="content-grid">
+            <div class="bio-column fade-in-up" style="transition-delay: 0.2s;">
+                <div class="bio-content">
+                    <p>
+                        I’m a multimedia designer with over 12 years of experience
+                        bridging the gap between creative vision and technical
+                        execution. From pixel-perfect print design to immersive web
+                        motion, I build digital experiences that leave a lasting
+                        impression.
+                    </p>
+                    <p>
+                        My toolkit is vast, but my focus is sharp. I’m a proficient user
+                        of the Adobe Creative Suite, with extensive experience in Final
+                        Cut, Cinema 4D, and iMovie. On the code side, I speak HTML5,
+                        CSS, and Bootstrap fluently, with a working knowledge of
+                        JavaScript and Java to bring designs to life.
+                    </p>
+                    <p>
+                        Bilingual in Spanish and English, I thrive in collaborative
+                        environments. Most recently, as a Multimedia Producer at a top
+                        Fox affiliate, I’ve managed complex projects across multiple
+                        departments, consistently delivering on-brand, on-time results
+                        that exceed expectations.
+                    </p>
+                </div>
 
-        <div class="social-links fade-in-up" style="transition-delay: 0.4s;">
-            <a
-                href="https://www.github.com/edrosillo"
-                target="_blank"
-                class="social-link glitch-hover"
-                data-text="GITHUB">GITHUB</a
-            >
-            <a
-                href="https://www.linkedin.com/in/edrosillo"
-                target="_blank"
-                class="social-link glitch-hover"
-                data-text="LINKEDIN">LINKEDIN</a
-            >
-            <a
-                href="https://www.instagram.com/ed_rosillo"
-                target="_blank"
-                class="social-link glitch-hover"
-                data-text="INSTAGRAM">INSTAGRAM</a
-            >
-            <a
-                href="mailto:rosillo.ed@gmail.com"
-                class="social-link glitch-hover"
-                data-text="EMAIL">EMAIL</a
-            >
+                <div class="social-links fade-in-up" style="transition-delay: 0.4s;">
+                    <a
+                        href="https://www.github.com/edrosillo"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-link glitch-hover"
+                        data-text="GITHUB">GITHUB</a
+                    >
+                    <a
+                        href="https://www.linkedin.com/in/edrosillo"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-link glitch-hover"
+                        data-text="LINKEDIN">LINKEDIN</a
+                    >
+                    <a
+                        href="https://www.instagram.com/ed_rosillo"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-link glitch-hover"
+                        data-text="INSTAGRAM">INSTAGRAM</a
+                    >
+                    <a
+                        href="mailto:rosillo.ed@gmail.com"
+                        class="social-link glitch-hover"
+                        data-text="EMAIL">EMAIL</a
+                    >
+                </div>
+            </div>
+            
+            <aside class="skills-sidebar fade-in-up" style="transition-delay: 0.3s;">
+                <SkillsInventory />
+            </aside>
         </div>
     </div>
 </section>
@@ -90,9 +102,15 @@ import GlitchText from "./GlitchText.astro";
         width: 100%;
         opacity: 0.5;
     }
+    
+    .content-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: start;
+    }
 
     .bio-content {
-        max-width: 800px;
         margin-bottom: 4rem;
     }
 
@@ -115,5 +133,23 @@ import GlitchText from "./GlitchText.astro";
         color: var(--color-text);
         text-transform: uppercase;
         letter-spacing: 1px;
+    }
+    
+    .skills-sidebar {
+        position: sticky;
+        top: 2rem;
+    }
+    
+    @media (max-width: 900px) {
+        .content-grid {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+        
+        .skills-sidebar {
+            position: static;
+            order: -1; /* Optional: put skills above bio on mobile? Or keep below. Let's keep below for now */
+            order: 1;
+        }
     }
 </style>

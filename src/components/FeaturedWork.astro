@@ -1,0 +1,188 @@
+---
+import { getCollection } from "astro:content";
+import GlitchText from "./GlitchText.astro";
+
+const projects = await getCollection("projects");
+// Sort by date and take the top 3
+const featuredProjects = projects
+    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+    .slice(0, 3);
+---
+
+<section class="featured-work">
+    <header class="section-header fade-in-up">
+        <GlitchText text="LATEST DROPS" as="h2" class="section-title" />
+        <div class="decorative-line"></div>
+    </header>
+
+    <div class="projects-grid">
+        {
+            featuredProjects.map((project, index) => (
+                <a
+                    href={`/projects/${project.slug}`}
+                    class="project-card fade-in-up"
+                    style={`transition-delay: ${index * 0.1}s;`}
+                >
+                    <div class="image-container">
+                        {project.data.heroImage ? (
+                            <img
+                                src={project.data.heroImage}
+                                alt={project.data.title}
+                                loading="lazy"
+                                decoding="async"
+                                width="600"
+                                height="338"
+                            />
+                        ) : (
+                            <div class="placeholder-image" />
+                        )}
+                        <div class="overlay">
+                            <span class="view-project">VIEW PROJECT</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="category">{project.data.category}</span>
+                        <h3>{project.data.title}</h3>
+                    </div>
+                </a>
+            ))
+        }
+    </div>
+    
+    <div class="view-all-container fade-in-up">
+        <a href="/motion" class="view-all-btn">VIEW ALL WORK</a>
+    </div>
+</section>
+
+<style>
+    .featured-work {
+        padding: 4rem 0;
+    }
+
+    .section-header {
+        margin-bottom: 3rem;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        color: var(--color-text);
+        white-space: nowrap;
+    }
+
+    .decorative-line {
+        height: 1px;
+        background: linear-gradient(90deg, var(--color-primary), transparent);
+        width: 100%;
+        opacity: 0.5;
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .project-card {
+        display: block;
+        text-decoration: none;
+        group: hover;
+    }
+
+    .image-container {
+        position: relative;
+        aspect-ratio: 16/9;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 1rem;
+        border: 1px solid #333;
+        transition: all 0.3s ease;
+    }
+
+    .project-card:hover .image-container {
+        border-color: var(--color-primary);
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+        transform: translateY(-5px);
+    }
+
+    .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .project-card:hover img {
+        transform: scale(1.05);
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .project-card:hover .overlay {
+        opacity: 1;
+    }
+
+    .view-project {
+        color: var(--color-primary);
+        font-family: var(--font-heading);
+        letter-spacing: 2px;
+        border: 1px solid var(--color-primary);
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .card-content h3 {
+        font-family: var(--font-heading);
+        font-size: 1.2rem;
+        color: var(--color-text);
+        margin: 0;
+    }
+
+    .category {
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        color: var(--color-accent);
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 0.3rem;
+    }
+    
+    .view-all-container {
+        text-align: center;
+        margin-top: 2rem;
+    }
+    
+    .view-all-btn {
+        display: inline-block;
+        padding: 0.8rem 2rem;
+        background: transparent;
+        border: 1px solid var(--color-dim);
+        color: var(--color-text-muted);
+        font-family: var(--font-heading);
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+    }
+    
+    .view-all-btn:hover {
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+        background: rgba(0, 255, 255, 0.05);
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+    }
+</style>

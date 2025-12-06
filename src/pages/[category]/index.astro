@@ -111,17 +111,11 @@ const title = categoryTitles[category as keyof typeof categoryTitles];
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     }
 
-    .project-card.graphic:hover {
+    .project-card.graphic:hover,
+    .project-card.motion:hover,
+    .project-card.web:hover {
         border-color: var(--color-primary);
         box-shadow: 0 0 15px var(--color-primary);
-    }
-    .project-card.motion:hover {
-        border-color: var(--color-secondary);
-        box-shadow: 0 0 15px var(--color-secondary);
-    }
-    .project-card.web:hover {
-        border-color: var(--color-accent);
-        box-shadow: 0 0 15px var(--color-accent);
     }
 
     .card-image {

@@ -3,7 +3,7 @@ title: 'Orange Bowl Open'
 description: 'Motion graphics opener for the Orange Bowl broadcast.'
 pubDate: '2021-01-02'
 category: 'motion'
-heroImage: 'https://img.youtube.com/vi/YOjInNwRUEQ/maxresdefault.jpg'
+heroImage: 'https://img.youtube.com/vi/YOjInNwRUEQ/hqdefault.jpg'
 videoId: 'YOjInNwRUEQ'
 tags: ['motion graphics', 'broadcast', 'sports']
 ---

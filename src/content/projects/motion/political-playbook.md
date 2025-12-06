@@ -3,7 +3,7 @@ title: 'Political Playbook'
 description: 'News package opener for political coverage.'
 pubDate: '2020-11-03'
 category: 'motion'
-heroImage: 'https://img.youtube.com/vi/t4uOSAshMXY/maxresdefault.jpg'
+heroImage: 'https://img.youtube.com/vi/t4uOSAshMXY/hqdefault.jpg'
 videoId: 't4uOSAshMXY'
 tags: ['news', 'politics', 'opener']
 ---

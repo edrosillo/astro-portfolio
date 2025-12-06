@@ -3,7 +3,7 @@ title: 'Ingles Chef''s Kitchen'
 description: 'Commercial spot featuring a cooking demonstration.'
 pubDate: '2021-03-20'
 category: 'motion'
-heroImage: 'https://img.youtube.com/vi/6Pi40whsJiI/maxresdefault.jpg'
+heroImage: 'https://img.youtube.com/vi/6Pi40whsJiI/hqdefault.jpg'
 videoId: '6Pi40whsJiI'
 tags: ['commercial', 'branding', 'lifestyle']
 ---

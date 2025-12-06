@@ -3,7 +3,7 @@ title: 'Chadwick Boseman Memorial'
 description: 'A tribute video honoring the life and legacy of Chadwick Boseman.'
 pubDate: '2020-08-29'
 category: 'motion'
-heroImage: 'https://img.youtube.com/vi/5ZFJxEBW6-U/maxresdefault.jpg'
+heroImage: 'https://img.youtube.com/vi/5ZFJxEBW6-U/hqdefault.jpg'
 videoId: '5ZFJxEBW6-U'
 tags: ['editing', 'tribute', 'broadcast']
 ---

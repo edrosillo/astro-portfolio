@@ -3,7 +3,7 @@ title: 'Severe Weather Awareness'
 description: 'Informational graphic package for weather safety.'
 pubDate: '2021-02-10'
 category: 'motion'
-heroImage: 'https://img.youtube.com/vi/4zuaUzDE3Gs/maxresdefault.jpg'
+heroImage: 'https://img.youtube.com/vi/4zuaUzDE3Gs/hqdefault.jpg'
 videoId: '4zuaUzDE3Gs'
 tags: ['weather', 'informational', 'graphics']
 ---

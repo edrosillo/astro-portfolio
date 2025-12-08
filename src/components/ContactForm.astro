@@ -36,7 +36,7 @@
     </div>
 
     <!-- Cloudflare Turnstile Widget -->
-    <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA"></div>
+    <div class="cf-turnstile" data-sitekey="0x4AAAAAACFH9sKO9AyATBiC"></div>
 
     <button type="submit" class="submit-btn">
         <span class="btn-text">SEND MESSAGE</span>
@@ -49,46 +49,48 @@
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer
 ></script>
 
-<script>
-    const form = document.getElementById("contact-form");
+<script lang="ts">
+    const form = document.getElementById("contact-form") as HTMLFormElement | null;
     const statusDiv = document.getElementById("form-status");
 
-    form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const formData = new FormData(form);
-        const turnstileToken = formData.get("cf-turnstile-response");
+    if (form && statusDiv) {
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const turnstileToken = formData.get("cf-turnstile-response");
 
-        if (!turnstileToken) {
-            statusDiv.textContent = "Please complete the security check.";
-            statusDiv.className = "form-status error";
-            return;
-        }
+            if (!turnstileToken) {
+                statusDiv.textContent = "Please complete the security check.";
+                statusDiv.className = "form-status error";
+                return;
+            }
 
-        statusDiv.textContent = "SENDING...";
-        statusDiv.className = "form-status sending";
+            statusDiv.textContent = "SENDING...";
+            statusDiv.className = "form-status sending";
 
-        try {
-            const response = await fetch("/api/submit-contact", {
-                method: "POST",
-                body: formData,
-            });
+            try {
+                const response = await fetch("/api/submit-contact", {
+                    method: "POST",
+                    body: formData,
+                });
 
-            const result = await response.json();
+                const result = await response.json();
 
-            if (result.success) {
-                statusDiv.textContent = "MESSAGE SENT SUCCESSFULLY!";
-                statusDiv.className = "form-status success";
-                form.reset();
-            } else {
-                statusDiv.textContent =
-                    "ERROR: " + (result.error || "UNKNOWN ERROR");
+                if (result.success) {
+                    statusDiv.textContent = "MESSAGE SENT SUCCESSFULLY!";
+                    statusDiv.className = "form-status success";
+                    form.reset();
+                } else {
+                    statusDiv.textContent =
+                        "ERROR: " + (result.error || "UNKNOWN ERROR");
+                    statusDiv.className = "form-status error";
+                }
+            } catch (error) {
+                statusDiv.textContent = "NETWORK ERROR. PLEASE TRY AGAIN.";
                 statusDiv.className = "form-status error";
             }
-        } catch (error) {
-            statusDiv.textContent = "NETWORK ERROR. PLEASE TRY AGAIN.";
-            statusDiv.className = "form-status error";
-        }
-    });
+        });
+    }
 </script>
 
 <style>

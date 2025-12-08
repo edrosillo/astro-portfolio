@@ -12,5 +12,11 @@
 	},
 	"observability": {
     "enabled": true
+  },
+  "vars": {
+    "NODE_VERSION": "20",
+    "CONTACT_EMAIL": "rosillo.ed@gmail.com"
+    // DO NOT ADD SECRETS (API KEYS) HERE.
+    // Secrets should be added in the Cloudflare Dashboard -> Settings -> Variables
   }
 }

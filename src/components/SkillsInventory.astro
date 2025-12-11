@@ -2,8 +2,9 @@
 import GlitchText from "./GlitchText.astro";
 
 const skills = [
+    { name: "Photoshop", level: 95, type: "design" },
     { name: "After Effects", level: 95, type: "motion" },
-    { name: "Cinema 4D", level: 85, type: "motion" },
+    { name: "Illustrator", level: 85, type: "design" },
     { name: "Premiere Pro", level: 90, type: "motion" },
     { name: "Astro", level: 80, type: "dev" },
     { name: "React", level: 75, type: "dev" },
@@ -35,7 +36,7 @@ const skills = [
                     </div>
                     <div class="info-row">
                         <span class="label">LEVEL:</span>
-                        <span class="value">24</span>
+                        <span class="value">40</span>
                     </div>
                     <div class="info-row">
                         <span class="label">XP:</span>
@@ -243,12 +244,10 @@ const skills = [
     
     .progress-bar {
         height: 100%;
-        background: var(--color-text);
+        background: var(--color-primary);
+        box-shadow: 0 0 5px var(--color-primary);
         position: relative;
     }
-    
-    .progress-bar.motion { background: var(--color-primary); box-shadow: 0 0 5px var(--color-primary); }
-    .progress-bar.dev { background: var(--color-accent); box-shadow: 0 0 5px var(--color-accent); }
     
     .inventory-footer {
         padding: 0.5rem 1rem;

@@ -5,7 +5,9 @@ import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
-	adapter: cloudflare(),
+	adapter: cloudflare({
+		imageService: "compile",
+	}),
 	image: {
 		domains: ["img.youtube.com"],
 	},

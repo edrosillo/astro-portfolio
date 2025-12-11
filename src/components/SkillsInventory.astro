@@ -86,6 +86,23 @@ const skills = [
         overflow: hidden;
     }
     
+    /* Global Scanline Overlay */
+    .inventory-frame::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            rgba(18, 16, 16, 0) 50%,
+            rgba(0, 0, 0, 0.1) 50%
+        );
+        background-size: 100% 4px;
+        pointer-events: none;
+        z-index: 20;
+    }
+
     .inventory-frame::before {
         content: "";
         position: absolute;
@@ -114,6 +131,8 @@ const skills = [
         justify-content: space-between;
         align-items: center;
         border-bottom: 2px solid #333;
+        position: relative;
+        z-index: 21; /* Above scanlines */
     }
     
     .header-text {
@@ -144,6 +163,8 @@ const skills = [
         grid-template-columns: 1fr 2fr;
         gap: 2rem;
         padding: 2rem;
+        position: relative;
+        z-index: 21;
     }
     
     @media (max-width: 600px) {
@@ -194,7 +215,11 @@ const skills = [
     }
     
     .label { color: var(--color-text-muted); }
-    .value { color: var(--color-accent); }
+    .value { 
+        color: #fff; /* High contrast */
+        text-shadow: 0 0 5px var(--color-primary);
+        font-weight: bold;
+    }
     
     .skill-row {
         margin-bottom: 1.2rem;

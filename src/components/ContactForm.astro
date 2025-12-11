@@ -46,12 +46,49 @@
     <div id="form-status" class="form-status"></div>
 </form>
 
+<!-- Success Modal -->
+<dialog id="success-modal" class="retro-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="modal-title">SYSTEM MEMO</span>
+            <button class="close-modal-btn" aria-label="Close">×</button>
+        </div>
+        <div class="modal-body">
+            <div class="icon-check">✓</div>
+            <p class="modal-message">TRANSMISSION RECEIVED<br>SUCCESSFULLY.</p>
+            <p class="modal-subtext">WE WILL RESPOND SHORTLY.</p>
+        </div>
+        <div class="modal-footer">
+            <button class="modal-action-btn">ACKNOWLEDGE</button>
+        </div>
+    </div>
+</dialog>
+
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer
 ></script>
 
 <script lang="ts">
-    const form = document.getElementById("contact-form") as HTMLFormElement | null;
+   const form = document.getElementById("contact-form") as HTMLFormElement | null;
     const statusDiv = document.getElementById("form-status");
+    const modal = document.getElementById("success-modal") as HTMLDialogElement | null;
+    const closeModalBtn = document.querySelector(".close-modal-btn");
+    const actionModalBtn = document.querySelector(".modal-action-btn");
+
+    if (modal) {
+        const closeFn = () => {
+            modal.close();
+        };
+
+        if (closeModalBtn) closeModalBtn.addEventListener("click", closeFn);
+        if (actionModalBtn) actionModalBtn.addEventListener("click", closeFn);
+        
+        // Close on backdrop click
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.close();
+            }
+        });
+    }
 
     if (form && statusDiv) {
         form.addEventListener("submit", async (e) => {
@@ -77,9 +114,15 @@
                 const result = await response.json();
 
                 if (result.success) {
-                    statusDiv.textContent = "MESSAGE SENT SUCCESSFULLY!";
-                    statusDiv.className = "form-status success";
+                    statusDiv.textContent = "";
+                    statusDiv.className = "form-status";
                     form.reset();
+                    if (modal && typeof modal.showModal === "function") {
+                        modal.showModal();
+                    } else {
+                        // Fallback
+                        alert("MESSAGE SENT SUCCESSFULLY!");
+                    }
                 } else {
                     statusDiv.textContent =
                         "ERROR: " + (result.error || "UNKNOWN ERROR");
@@ -177,5 +220,100 @@
 
     .cf-turnstile {
         margin-bottom: 2rem;
+    }
+
+    /* Modal Styles */
+    .retro-modal {
+        background: transparent;
+        border: none;
+        padding: 0;
+        margin: auto;
+        color: var(--color-text);
+        max-width: 90vw;
+        width: 400px;
+        backdrop-filter: blur(5px);
+    }
+
+    .retro-modal::backdrop {
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(5px);
+    }
+
+    .modal-content {
+        background: var(--color-surface);
+        border: 2px solid var(--color-primary);
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .modal-header {
+        background: var(--color-primary);
+        color: var(--color-bg);
+        padding: 0.5rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: var(--font-heading);
+    }
+
+    .modal-title {
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    .close-modal-btn {
+        background: none;
+        border: none;
+        color: var(--color-bg);
+        font-size: 1.5rem;
+        cursor: pointer;
+        line-height: 1;
+    }
+
+    .modal-body {
+        padding: 2rem;
+        text-align: center;
+        font-family: var(--font-mono);
+    }
+
+    .icon-check {
+        font-size: 3rem;
+        color: var(--color-secondary);
+        margin-bottom: 1rem;
+        text-shadow: 0 0 10px var(--color-secondary);
+    }
+
+    .modal-message {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        color: var(--color-text);
+    }
+
+    .modal-subtext {
+        font-size: 0.8rem;
+        color: var(--color-text-muted);
+    }
+
+    .modal-footer {
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .modal-action-btn {
+        background: transparent;
+        border: 1px solid var(--color-primary);
+        color: var(--color-primary);
+        padding: 0.5rem 2rem;
+        font-family: var(--font-heading);
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .modal-action-btn:hover {
+        background: var(--color-primary);
+        color: var(--color-bg);
     }
 </style>

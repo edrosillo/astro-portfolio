@@ -14,7 +14,7 @@ const { pathname } = Astro.url;
 <nav class="navbar">
     <div class="container nav-container">
         <a href="/" class="logo">
-            EDDIE<span class="dot">.</span>
+            <img src="/images/ER_Logo.png" alt="Eddie Rosillo Logo" class="logo-img" />
         </a>
 
         <div class="nav-links">
@@ -112,16 +112,22 @@ const { pathname } = Astro.url;
     }
 
     .logo {
-        font-family: var(--font-heading);
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: var(--color-text);
-        letter-spacing: -0.05em;
+        display: flex;
+        align-items: center;
         z-index: 1001;
+        height: 2.5rem; /* Increase logo container height */
     }
 
-    .dot {
-        color: var(--color-primary);
+    .logo-img {
+        height: 100%; /* Take up full container height */
+        width: auto;
+        filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.8));
+        transition: filter 0.3s ease, transform 0.3s ease;
+    }
+
+    .logo-img:hover {
+        filter: drop-shadow(0 0 8px var(--color-primary));
+        transform: scale(1.05);
     }
 
     .nav-links {

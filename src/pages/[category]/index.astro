@@ -13,9 +13,9 @@ export async function getStaticPaths() {
 
 const { category } = Astro.params;
 const allProjects = await getCollection("projects");
-const projects = allProjects.filter(
-    (project) => project.data.category === category,
-);
+const projects = allProjects
+    .filter((project) => project.data.category === category)
+    .sort((a, b) => a.data.title.localeCompare(b.data.title));
 
 const categoryTitles = {
     graphic: "GRAPHIC DESIGN",

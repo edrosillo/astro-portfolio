@@ -3,15 +3,21 @@ import { getCollection } from "astro:content";
 import GlitchText from "./GlitchText.astro";
 
 const projects = await getCollection("projects");
-// Sort by date and take the top 3
+
+const targetSlugs = [
+    "graphic/amazon-guerrilla-marketing-mock-up",
+    "motion/rebel-regiment-jumbotron",
+    "web/drum-kit"
+];
+
 const featuredProjects = projects
-    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-    .slice(0, 3);
+    .filter(project => targetSlugs.includes(project.slug))
+    .sort((a, b) => targetSlugs.indexOf(a.slug) - targetSlugs.indexOf(b.slug));
 ---
 
 <section class="featured-work">
     <header class="section-header fade-in-up">
-        <GlitchText text="LATEST DROPS" as="h2" class="section-title" />
+        <GlitchText text="EXAMPLES" as="h2" class="section-title" />
         <div class="decorative-line"></div>
     </header>
 

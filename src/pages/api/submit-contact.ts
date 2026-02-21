@@ -1,11 +1,17 @@
+import type { APIRoute } from "astro";
+
+export const prerender = false;
+
 interface Env {
   TURNSTILE_SECRET_KEY: string;
   RESEND_API_KEY: string;
   CONTACT_EMAIL: string;
 }
 
-export async function onRequestPost({ request, env }: { request: Request; env: Env }) {
+export const POST: APIRoute = async ({ request, locals }) => {
   try {
+    const env = (locals as any).runtime?.env as Env || {} as Env;
+    
     const formData = await request.formData();
     const name = formData.get("name");
     const email = formData.get("email");
@@ -13,7 +19,7 @@ export async function onRequestPost({ request, env }: { request: Request; env: E
     const turnstileToken = formData.get("cf-turnstile-response");
 
     // 1. Validate Turnstile Token
-    const ip = request.headers.get("CF-Connecting-IP");
+    const ip = request.headers.get("CF-Connecting-IP") || "127.0.0.1";
     const turnstileResult = await fetch(
       "https://challenges.cloudflare.com/turnstile/v0/siteverify",
       {
@@ -29,7 +35,7 @@ export async function onRequestPost({ request, env }: { request: Request; env: E
       }
     );
 
-    const turnstileOutcome = await turnstileResult.json();
+    const turnstileOutcome = await turnstileResult.json() as any;
 
     if (!turnstileOutcome.success) {
       return new Response(
@@ -79,7 +85,7 @@ export async function onRequestPost({ request, env }: { request: Request; env: E
         },
         body: JSON.stringify({
           from: "Retro Portfolio <onboarding@resend.dev>", // Default Resend test domain
-          to: [env.CONTACT_EMAIL || "edrosillo@gmail.com"], // Fallback for safety, assuming user's email based on context, or just env
+          to: [env.CONTACT_EMAIL || "edrosillo@gmail.com"], // Fallback for safety
           reply_to: email, // Reply to the person who filled the form
           subject: `New Contact from ${safeName}`,
           html: `
@@ -94,9 +100,6 @@ export async function onRequestPost({ request, env }: { request: Request; env: E
       if (!resendResponse.ok) {
         const errorData = await resendResponse.json();
         console.error("Resend API Error:", errorData);
-        // We still return success to the user to avoid exposing internal errors, but log it.
-        // Or we can return an error if we want strict feedback.
-        // Let's return a generic error if it fails significantly.
         return new Response(
            JSON.stringify({ success: false, error: "Failed to send email." }),
            { status: 500, headers: { "Content-Type": "application/json" } }
@@ -104,7 +107,6 @@ export async function onRequestPost({ request, env }: { request: Request; env: E
       }
     } else {
         console.warn("RESEND_API_KEY is missing. Email not sent.");
-        // If no key, we mock success for dev/preview unless explicitly testing
     }
 
     return new Response(
@@ -121,4 +123,4 @@ export async function onRequestPost({ request, env }: { request: Request; env: E
       status: 500,
     });
   }
-}
+};

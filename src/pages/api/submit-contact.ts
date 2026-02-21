@@ -60,18 +60,16 @@ export const POST: APIRoute = async ({ request, locals }) => {
 
     // 3. Send Email via Resend API
     if (env.RESEND_API_KEY) {
-      const escapeHtml = (str: string) =>
-        str.replace(
-          /[&<>"']/g,
-          (m) =>
-            ({
-              "&": "&amp;",
-              "<": "&lt;",
-              ">": "&gt;",
-              '"': "&quot;",
-              "'": "&#39;",
-            })[m as keyof { [key: string]: string }]
-        );
+      const escapeHtml = (str: string) => {
+        const charMap: Record<string, string> = {
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;",
+        };
+        return str.replace(/[&<>"']/g, (m) => charMap[m]);
+      };
 
       const safeName = escapeHtml(name as string);
       const safeEmail = escapeHtml(email as string);

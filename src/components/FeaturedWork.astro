@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 import GlitchText from "./GlitchText.astro";
 
 const projects = await getCollection("projects");
@@ -31,13 +32,13 @@ const featuredProjects = projects
                 >
                     <div class="image-container">
                         {project.data.heroImage ? (
-                            <img
+                            <Image
                                 src={project.data.heroImage}
                                 alt={project.data.title}
                                 loading="lazy"
-                                decoding="async"
-                                width="600"
-                                height="338"
+                                width={600}
+                                height={338}
+                                class="featured-img"
                             />
                         ) : (
                             <div class="placeholder-image" />
@@ -110,14 +111,14 @@ const featuredProjects = projects
         transform: translateY(-5px);
     }
 
-    .image-container img {
+    .featured-img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         transition: transform 0.5s ease;
     }
 
-    .project-card:hover img {
+    .project-card:hover .featured-img {
         transform: scale(1.05);
     }
 

@@ -8,8 +8,18 @@ import GlitchText from "./GlitchText.astro";
         <div class="shape cube"></div>
         <div class="shape pyramid"></div>
     </div>
+    
+    <!-- Spline 3D Scene Layer -->
+    <div class="spline-container">
+        <!-- Loading overlay -->
+        <div id="spline-loader" class="spline-loader">
+            <div class="spinner"></div>
+        </div>
+        <canvas id="canvas3d"></canvas>
+    </div>
+
     <div class="hero-fade"></div>
-    <div class="container relative">
+    <div class="container relative front-layer">
         <div class="hero-content">
             <div class="fade-in-up" style="transition-delay: 0.1s;">
                 <GlitchText text="Hi, I'm Eddie." as="h1" class="hero-title" />
@@ -30,6 +40,7 @@ import GlitchText from "./GlitchText.astro";
 </header>
 
 <script>
+    // ─── Typewriter Effect ───────────────────────────────────────────
     const text = "Web Developer";
     const typingText = document.querySelector('.typing-text');
     let i = 0;
@@ -44,6 +55,28 @@ import GlitchText from "./GlitchText.astro";
     
     // Start typing after a delay
     setTimeout(typeWriter, 1000);
+</script>
+
+<script type="module">
+    // ─── Spline 3D Integration ───────────────────────────────────────
+    import { Application } from 'https://esm.sh/@splinetool/runtime';
+
+    const canvas = document.getElementById('canvas3d');
+    const loader = document.getElementById('spline-loader');
+    
+    if (canvas && loader) {
+        const spline = new Application(canvas);
+        
+        spline.load('https://prod.spline.design/7cIGUQXYiEJvtFKB/scene.splinecode')
+            .then(() => {
+                loader.classList.add('hidden');
+                canvas.classList.add('loaded');
+            })
+            .catch((err) => {
+                console.error("Failed to load Spline scene:", err);
+                loader.classList.add('hidden');
+            });
+    }
 </script>
 
 <style>
@@ -145,7 +178,7 @@ import GlitchText from "./GlitchText.astro";
         100% { transform: translateY(0) rotateX(360deg) rotateY(360deg); }
     }
 
-    /* Fade Overlay */
+    /* Fallback Fade Overlay */
     .hero-fade {
         position: absolute;
         bottom: 0;
@@ -157,14 +190,74 @@ import GlitchText from "./GlitchText.astro";
         pointer-events: none;
     }
 
+    /* Important Layers */
     .relative {
         position: relative;
-        z-index: 2;
         width: 100%;
+        pointer-events: none; /* Let clicks pass through to 3D canvas */
     }
 
+    .front-layer {
+        z-index: 10;
+    }
+    
+    .front-layer * {
+        pointer-events: auto; /* Re-enable clicks on text/links */
+    }
 
+    /* Spline 3D Integration */
+    .spline-container {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60%; /* Align to the right half and let it bleed */
+        height: 100%;
+        z-index: 2; /* Sits above grid (0) and shapes (1), but behind text (10) */
+        pointer-events: none;
+    }
 
+    #canvas3d {
+        width: 100%;
+        height: 100%;
+        display: block;
+        opacity: 0;
+        transition: opacity 0.6s ease;
+    }
+
+    #canvas3d.loaded {
+        opacity: 1;
+    }
+
+    .spline-loader {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 3;
+        transition: opacity 0.4s ease;
+        background: transparent;
+    }
+
+    .spline-loader.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid rgba(0, 255, 255, 0.15);
+        border-top-color: var(--color-primary);
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+
+    /* Typography */
     .hero-title {
         font-size: 6rem;
         margin-bottom: 1rem;
@@ -256,6 +349,11 @@ import GlitchText from "./GlitchText.astro";
         }
         .scroll-indicator {
             bottom: 1rem;
+        }
+        
+        .spline-container {
+            width: 100%; /* Full width on mobile */
+            opacity: 0.5; /* Fade out slightly so text remains readable */
         }
     }
 </style>

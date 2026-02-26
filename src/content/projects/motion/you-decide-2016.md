@@ -8,6 +8,4 @@ videoId: 'FyQraj5E7zU'
 tags: ['politics', 'broadcast', 'opener']
 ---
 
-# You Decide 2016 Open
-
 The main title sequence for the "You Decide 2016" election coverage. A comprehensive graphics package designed for the entire election season.

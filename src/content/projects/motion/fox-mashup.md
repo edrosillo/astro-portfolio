@@ -8,6 +8,4 @@ videoId: 'wMyhUqxdp1c'
 tags: ['promo', 'mashup', 'broadcast']
 ---
 
-# Fox Mashup
-
 A high-energy mashup reel combining clips from various Fox shows and segments. Edited to music for promotional use.

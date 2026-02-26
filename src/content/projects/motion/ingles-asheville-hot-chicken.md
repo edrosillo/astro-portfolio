@@ -8,6 +8,4 @@ videoId: 'CoqPv2ZseTw'
 tags: ['recipe', 'commercial', 'lifestyle']
 ---
 
-# INGLES CHEF'S KITCHEN ASHEVILLE HOT CHICKEN 60
-
 A visually spicy 60-second spot for the "Asheville Hot Chicken" recipe. Features appetizing food videography and clear on-screen instructions.

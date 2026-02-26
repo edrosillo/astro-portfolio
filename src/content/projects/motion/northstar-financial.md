@@ -8,6 +8,4 @@ videoId: '01XdXWFxEOs'
 tags: ['finance', 'lifestyle', 'informational']
 ---
 
-# Northstar Financial Lessons Learned
-
 A lifestyle-focused motion graphics video explaining financial lessons learned. Uses clean vector art and smooth transitions to convey complex information simply.

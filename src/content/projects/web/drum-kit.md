@@ -8,8 +8,6 @@ liveUrl: 'https://edrosillo.github.io/drumkit/'
 tags: ["javascript","dom","audio"]
 ---
 
-# Drum Kit
-
 An interactive drum kit that plays sounds on key press.
 
 [View Live Project](https://edrosillo.github.io/drumkit/)

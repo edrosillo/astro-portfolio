@@ -8,8 +8,6 @@ liveUrl: 'https://edrosillo-jamming.surge.sh/'
 tags: ["react","api","javascript"]
 ---
 
-# Jamming
-
 A React application that interfaces with the Spotify API to create playlists.
 
 [View Live Project](https://edrosillo-jamming.surge.sh/)

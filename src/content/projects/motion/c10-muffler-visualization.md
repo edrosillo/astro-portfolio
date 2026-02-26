@@ -8,6 +8,4 @@ videoId: 'LnZATe8YY5c'
 tags: ['3d', 'visualization', 'automotive']
 ---
 
-# 1967 C10 with Lexus V8 Swap Muffler Visualization
-
 3D visualization to show how the new muffler system on the C10 works.

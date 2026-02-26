@@ -8,8 +8,6 @@ liveUrl: 'https://edrosillo.github.io/TortoiseshellOptics/'
 tags: ["html","css"]
 ---
 
-# Tortoiseshell Optics
-
 An elegant landing page for a premium eyewear brand.
 
 [View Live Project](https://edrosillo.github.io/TortoiseshellOptics/)

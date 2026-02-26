@@ -8,6 +8,4 @@ videoId: 'pLyIgvE2Sww'
 tags: ['sports', 'broadcast', 'closer']
 ---
 
-# Half Time Report Close
-
 The closing sequence for the Half Time Report. Features the same dynamic 3D elements as the open but designed to wrap up the segment.

@@ -7,8 +7,4 @@ heroImage: '/images/design/design18.jpg'
 tags: ["print","flyer","creative"]
 ---
 
-# Mixed Media Flyer
-
-![Mixed Media Flyer](/images/design/design18.jpg)
-
 Creative flyer design.

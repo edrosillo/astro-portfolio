@@ -8,6 +8,4 @@ videoId: 'Vm-rOzM4bmI'
 tags: ['sponsor', 'jumbotron', 'event']
 ---
 
-# James F. Byrnes Rebel Regiment Jumbotron Sponsor Video
-
 A video created for the James F. Byrnes Rebel Regiment Jumbotron to acknowledge and thank sponsors. Designed for large-scale display and high visibility.

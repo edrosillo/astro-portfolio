@@ -8,6 +8,4 @@ videoId: 'ql83XlsQFWQ'
 tags: ['sports', 'broadcast', 'bumper']
 ---
 
-# National Championship Reopen
-
 Graphics used to bring viewers back into the National Championship game after a break. Maintains the epic tone of the broadcast.

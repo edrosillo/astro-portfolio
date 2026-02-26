@@ -8,6 +8,4 @@ videoId: 'sScWTi43zt0'
 tags: ['politics', 'broadcast', 'opener']
 ---
 
-# You Decide Republican Primary Open 2016
-
 Specific opening graphics for the Republican Primary coverage within the "You Decide 2016" brand.

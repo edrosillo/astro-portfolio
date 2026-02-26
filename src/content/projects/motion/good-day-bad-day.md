@@ -8,6 +8,4 @@ videoId: 'ma_F0EDmw00'
 tags: ['broadcast', 'segment', 'graphics']
 ---
 
-# Good Day Bad Day
-
 A fun, lighthearted graphics package for the popular "Good Day Bad Day" recurring segment.

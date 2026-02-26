@@ -8,8 +8,6 @@ videoId: 't4uOSAshMXY'
 tags: ['news', 'politics', 'opener']
 ---
 
-# Political Playbook
-
 The show opener for the "Political Playbook" segment. This graphic package uses patriotic imagery and modern design elements to create a professional news identity.
 
 ## Components

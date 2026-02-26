@@ -8,6 +8,4 @@ videoId: 'FQzqlMoLNuQ'
 tags: ['technology', 'broadcast', 'segment']
 ---
 
-# Plugged IN
-
 A tech-focused graphics package for the "Plugged IN" segment. Uses circuit board motifs and modern typography.

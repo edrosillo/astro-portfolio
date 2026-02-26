@@ -8,6 +8,4 @@ videoId: 'sa2woQ6B-Kg'
 tags: ['weather', 'social media', 'ig story']
 ---
 
-# Severe Weather Awareness Week IG Story Video
-
 A vertical video format motion graphics piece designed specifically for Instagram Stories to promote Severe Weather Awareness Week.

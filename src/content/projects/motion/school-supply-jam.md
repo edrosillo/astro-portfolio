@@ -8,8 +8,6 @@ videoId: 'vWrynkfMEio'
 tags: ['motion graphics', 'promotion', 'broadcast']
 ---
 
-# FOX Carolina School Supply Jam
-
 A promotional spot for the annual School Supply Jam event sponsored by Ingles. The goal was to create a fun, energetic animation to encourage community participation and donations.
 
 ## Key Features

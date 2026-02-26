@@ -7,8 +7,4 @@ heroImage: '/images/design/design21.jpg'
 tags: ["vector","branding","logo"]
 ---
 
-# Vector Logo Graphics II
-
-![Vector Logo Graphics II](/images/design/design21.jpg)
-
 Custom vector logo design.

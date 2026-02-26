@@ -8,6 +8,4 @@ videoId: 'TakXoUnoosc'
 tags: ['charity', 'broadcast', 'opener']
 ---
 
-# Angel Tree Initiative Open
-
 The main opening title for the Angel Tree Initiative special segment. Uses warm, festive imagery to evoke the holiday spirit.

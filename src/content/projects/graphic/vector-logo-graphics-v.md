@@ -7,8 +7,4 @@ heroImage: '/images/design/design27.jpg'
 tags: ["vector","branding","logo"]
 ---
 
-# Vector Logo Graphics V
-
-![Vector Logo Graphics V](/images/design/design27.jpg)
-
 Custom vector logo design.

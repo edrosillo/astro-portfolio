@@ -7,8 +7,4 @@ heroImage: '/images/design/design17.jpg'
 tags: ["vector","illustration","art"]
 ---
 
-# Vector Illustration
-
-![Vector Illustration](/images/design/design17.jpg)
-
 Detailed vector illustration.

@@ -8,6 +8,4 @@ videoId: 'o57bXsbWAbE'
 tags: ['politics', 'broadcast', 'opener']
 ---
 
-# Republican Primary 2012 Open
-
 The opening sequence for the 2012 Republican Primary election coverage. Uses iconic political imagery and bold typography.

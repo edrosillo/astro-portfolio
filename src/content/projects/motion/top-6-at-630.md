@@ -8,6 +8,4 @@ videoId: 'Dzo0K89F3Hg'
 tags: ['news', 'broadcast', 'rundown']
 ---
 
-# Top 6 at 630
-
 The opening graphic for the "Top 6 at 6:30" fast-paced news rundown. Designed to convey urgency and organization.

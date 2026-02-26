@@ -8,8 +8,6 @@ videoId: '5ZFJxEBW6-U'
 tags: ['editing', 'tribute', 'broadcast']
 ---
 
-# Chadwick Boseman Memorial
-
 A special tribute segment produced to honor the passing of Chadwick Boseman. This piece focuses on emotional storytelling through careful editing and sound design.
 
 ## Role

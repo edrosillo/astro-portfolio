@@ -8,6 +8,4 @@ videoId: 'NeNXNxxWyCc'
 tags: ['entertainment', 'broadcast', 'opener']
 ---
 
-# Entertainment Talk Open
-
 Bright and colorful opening graphics for "Entertainment Talk". Uses pop culture imagery and fun typography.

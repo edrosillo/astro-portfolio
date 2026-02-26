@@ -8,6 +8,4 @@ videoId: '4Z37Lt_eiHY'
 tags: ['charity', 'broadcast', 'bumper']
 ---
 
-# Angel Tree Initiative Bump Out
-
 A short "bump out" graphic used before commercial breaks to remind viewers about the Angel Tree Initiative.

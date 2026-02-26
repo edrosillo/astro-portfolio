@@ -8,6 +8,4 @@ videoId: 'RUcVhhI5GyQ'
 tags: ['entertainment', 'broadcast', 'segment']
 ---
 
-# Fox Picks
-
 A graphics package for "Fox Picks", highlighting staff or viewer recommendations.

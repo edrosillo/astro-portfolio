@@ -8,6 +8,4 @@ videoId: 'BAaLgez65KU'
 tags: ['news', 'graphics', 'pandemic']
 ---
 
-# Education in a Pandemic
-
 Motion graphics package for a special report series on the challenges of education during the pandemic. Uses serious but accessible visual language.

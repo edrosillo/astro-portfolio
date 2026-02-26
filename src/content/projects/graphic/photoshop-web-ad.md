@@ -7,8 +7,4 @@ heroImage: '/images/design/design5.jpg'
 tags: ["web","advertising","photoshop"]
 ---
 
-# Photoshop Web Ad
-
-![Photoshop Web Ad](/images/design/design5.jpg)
-
 Web advertisement created in Photoshop.

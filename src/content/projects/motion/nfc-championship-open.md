@@ -8,6 +8,4 @@ videoId: 't3MkSjWwBmY'
 tags: ['sports', 'broadcast', 'opener']
 ---
 
-# NFC Championship Open
-
 The main show opener for the NFC Championship. A high-production value piece used to introduce one of the biggest games of the year.

@@ -8,6 +8,4 @@ videoId: '8xyfMDRO5mg'
 tags: ['motion', 'social-media', 'trend']
 ---
 
-# Word On The Beat
-
 This is an adaptation of the Word on The Beat trend that was going around in December of 2025 using the Lids and Lizards product.

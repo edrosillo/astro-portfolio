@@ -8,6 +8,4 @@ videoId: 'CAijqO8_TZs'
 tags: ['weather', 'sponsor', 'broadcast']
 ---
 
-# Harley Davidson Riding Forecast
-
 A sponsored weather segment featuring Harley Davidson branding. Custom motion graphics integrate the sponsor's brand with the forecast data.

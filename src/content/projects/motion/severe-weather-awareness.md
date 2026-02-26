@@ -8,8 +8,6 @@ videoId: '4zuaUzDE3Gs'
 tags: ['weather', 'informational', 'graphics']
 ---
 
-# Severe Weather Awareness
-
 A social media and broadcast package designed to inform viewers about severe weather safety. The focus was on clear, readable typography and urgent but accessible imagery.
 
 ## Design Goals

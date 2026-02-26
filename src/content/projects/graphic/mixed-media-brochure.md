@@ -7,8 +7,4 @@ heroImage: '/images/design/design13.jpg'
 tags: ["print","brochure","layout"]
 ---
 
-# Mixed Media Brochure
-
-![Mixed Media Brochure](/images/design/design13.jpg)
-
 Folded brochure design combining various media.

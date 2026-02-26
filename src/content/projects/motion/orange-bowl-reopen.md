@@ -8,6 +8,4 @@ videoId: 'qkc4IsdbTnw'
 tags: ['sports', 'broadcast', 'bumper']
 ---
 
-# Orange Bowl ReOpen
-
 Graphics used to welcome viewers back to the Orange Bowl coverage after a commercial break. Designed to re-establish the energy and context of the game.

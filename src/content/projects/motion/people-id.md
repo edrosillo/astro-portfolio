@@ -8,6 +8,4 @@ videoId: 'vTcwdLlWn9s'
 tags: ['broadcast', 'id', 'short']
 ---
 
-# People 5 Second ID Coming Up Next
-
 A very short, 5-second branded ID used during commercial breaks to tease the "People" segment coming up next.

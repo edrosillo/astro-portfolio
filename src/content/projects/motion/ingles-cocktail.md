@@ -8,6 +8,4 @@ videoId: 'V91-1Zkj98Y'
 tags: ['commercial', 'recipe', 'lifestyle']
 ---
 
-# INGLES CHEFS KITCHEN FUZZY GRAYHOUND COCKTAIL
-
 A motion graphics spot for the "Fuzzy Grayhound Cocktail" recipe. Features clear text overlays and appetizing visuals to guide the viewer through the recipe.

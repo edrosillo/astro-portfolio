@@ -8,6 +8,4 @@ videoId: 'v9U4CfqvgQ0'
 tags: ['politics', 'broadcast', 'opener']
 ---
 
-# You Decide Democratic Primary Open 2016
-
 Specific opening graphics for the Democratic Primary coverage within the "You Decide 2016" brand.

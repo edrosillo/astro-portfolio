@@ -8,6 +8,4 @@ videoId: '2bFc26Nng7A'
 tags: ['sports', 'broadcast', 'transition']
 ---
 
-# NFC Championship WIPE
-
 A custom transition wipe animation used during the NFC Championship broadcast to move seamlessly between replay, live action, and graphics.

@@ -7,8 +7,4 @@ heroImage: '/images/design/design31.jpg'
 tags: ["digital","advertising","marketing"]
 ---
 
-# Digital Ad Campaign
-
-![Digital Ad Campaign](/images/design/design31.jpg)
-
 Comprehensive digital advertising campaign assets.

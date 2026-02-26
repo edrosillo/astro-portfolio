@@ -8,6 +8,4 @@ videoId: '33rdSZ4Jsbs'
 tags: ['charity', 'broadcast', 'bumper']
 ---
 
-# Angel Tree Initiative Bump In
-
 A short "bump in" graphic used when returning from commercial breaks, maintaining the Angel Tree branding and message.

@@ -8,6 +8,4 @@ videoId: '0Ssm7ilt2g8'
 tags: ['sports', 'broadcast', 'bumper']
 ---
 
-# NFC Championship ReOpen
-
 Graphics used to welcome viewers back to the NFC Championship coverage. Maintains the high-stakes energy of the event.

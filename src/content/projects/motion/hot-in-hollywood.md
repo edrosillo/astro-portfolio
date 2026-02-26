@@ -8,6 +8,4 @@ videoId: 'Y2yVoZ-LNMU'
 tags: ['entertainment', 'broadcast', 'opener']
 ---
 
-# Hot In Hollywood
-
 The flashy opening sequence for "Hot In Hollywood", featuring glitz, glamour, and red carpet imagery.

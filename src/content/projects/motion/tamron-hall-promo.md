@@ -8,6 +8,4 @@ videoId: 'CORAKeIvxR8'
 tags: ['promotion', 'contest', 'broadcast']
 ---
 
-# Tamron Hall Contest Promo
-
 A high-energy promo spot designed to drive viewer participation in a contest for the Tamron Hall show.

@@ -8,6 +8,4 @@ videoId: 'AAuF1Hojqhk'
 tags: ['sports', 'broadcast', 'opener']
 ---
 
-# National Championship Open
-
 The grand opening sequence for the National Championship game. Designed to build maximum hype and convey the prestige of the event.

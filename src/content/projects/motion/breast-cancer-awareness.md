@@ -8,6 +8,4 @@ videoId: 'VoV5KMqJPEw'
 tags: ['health', 'awareness', 'broadcast']
 ---
 
-# Breast Cancer Awareness Open
-
 A gentle and hopeful opening sequence for Breast Cancer Awareness month coverage. Utilizing the signature pink color palette.

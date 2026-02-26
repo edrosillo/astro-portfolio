@@ -8,8 +8,6 @@ liveUrl: 'https://edrosillo.github.io/Ravenous/'
 tags: ["react","api","javascript"]
 ---
 
-# Ravenous
-
 A restaurant search application using the Yelp API.
 
 [View Live Project](https://edrosillo.github.io/Ravenous/)

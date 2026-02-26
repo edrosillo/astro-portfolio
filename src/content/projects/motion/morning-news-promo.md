@@ -8,6 +8,4 @@ videoId: 'LJm06HcfLrg'
 tags: ['news', 'promo', 'broadcast']
 ---
 
-# The Morning News Topical - 15 Sec Promo
-
 A quick 15-second promo spot for The Morning News. Focuses on upcoming stories and weather coverage to entice morning viewers.

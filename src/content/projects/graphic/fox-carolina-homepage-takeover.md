@@ -7,8 +7,4 @@ heroImage: '/images/design/design32.jpg'
 tags: ["web","advertising","layout"]
 ---
 
-# Fox Carolina Homepage Takeover
-
-![Fox Carolina Homepage Takeover](/images/design/design32.jpg)
-
 Full page homepage takeover design.

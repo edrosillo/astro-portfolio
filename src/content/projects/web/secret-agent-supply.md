@@ -8,8 +8,6 @@ liveUrl: 'https://edrosillo.github.io/secretagentsupply/'
 tags: ["html","css","responsive"]
 ---
 
-# Secret Agent Supply
-
 A quirky e-commerce layout for secret agent supplies.
 
 [View Live Project](https://edrosillo.github.io/secretagentsupply/)

@@ -7,8 +7,4 @@ heroImage: '/images/design/design33.jpg'
 tags: ["social media","advertising","web"]
 ---
 
-# Social Media and Web Ads
-
-![Social Media and Web Ads](/images/design/design33.jpg)
-
 Engaging ads for social media platforms.

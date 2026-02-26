@@ -8,6 +8,4 @@ videoId: 'VUuG1ofhdkM'
 tags: ['news', 'promo', 'pandemic']
 ---
 
-# Education in a Pandemic (Tonight - 20 Sec Promo)
-
 A 20-second promo spot for the "Education in a Pandemic" special report, designed to air the night of the broadcast.

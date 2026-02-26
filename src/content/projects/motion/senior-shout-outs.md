@@ -8,6 +8,4 @@ videoId: 'qHqMq5NsmbQ'
 tags: ['community', 'opener', 'broadcast']
 ---
 
-# Senior Shout Outs Open
-
 The opening title sequence for "Senior Shout Outs", a segment celebrating graduating seniors. Features celebratory imagery and energetic animation.

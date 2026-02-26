@@ -7,8 +7,4 @@ heroImage: '/images/design/design23.jpg'
 tags: ["print","signage","outdoor"]
 ---
 
-# Amazon Corrugated Plastic Yard Signs
-
-![Amazon Corrugated Plastic Yard Signs](/images/design/design23.jpg)
-
 Design for physical yard signs.

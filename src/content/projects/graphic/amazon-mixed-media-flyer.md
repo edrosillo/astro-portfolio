@@ -7,8 +7,4 @@ heroImage: '/images/design/design22.jpg'
 tags: ["print","marketing","flyer"]
 ---
 
-# Amazon Mixed Media Flyer
-
-![Amazon Mixed Media Flyer](/images/design/design22.jpg)
-
 Promotional flyer for Amazon products.

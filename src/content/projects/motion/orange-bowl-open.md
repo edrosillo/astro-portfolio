@@ -8,8 +8,6 @@ videoId: 'YOjInNwRUEQ'
 tags: ['motion graphics', 'broadcast', 'sports']
 ---
 
-# Orange Bowl Open
-
 Broadcast opener created for the Orange Bowl coverage. This project involved high-energy motion graphics, 3D elements, and dynamic transitions to build excitement for the game.
 
 ## Tools Used

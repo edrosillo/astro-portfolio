@@ -8,6 +8,4 @@ videoId: 'gWhr_1lkpyk'
 tags: ['lifestyle', 'health', 'graphics']
 ---
 
-# LIFESTYLE OAKVIEW MEDICAL EAT THE RAINBOW
-
 Motion graphics for a lifestyle segment focusing on nutrition and "eating the rainbow". Colorful and engaging visuals to support the health advice.

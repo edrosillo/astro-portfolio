@@ -8,6 +8,4 @@ videoId: 'NFVrXIgpRPw'
 tags: ['sports', 'broadcast', 'closer']
 ---
 
-# Orange Bowl Close
-
 The closing sequence for the Orange Bowl broadcast. Provides a polished end to the coverage with credits and final game highlights.

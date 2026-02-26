@@ -8,8 +8,6 @@ liveUrl: 'https://edrosillo.github.io/TeaCozy/'
 tags: ["html","css"]
 ---
 
-# Tea Cozy
-
 A cozy website for a local tea shop with a focus on branding.
 
 [View Live Project](https://edrosillo.github.io/TeaCozy/)

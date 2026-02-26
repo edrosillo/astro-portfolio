@@ -8,6 +8,4 @@ videoId: 'ilxSmV-s0_E'
 tags: ['news', 'investigation', 'sweeps']
 ---
 
-# Sweeps Story Commercial Vehicle Inspections
-
 A specialized graphics package for an investigative news story on commercial vehicle inspections. Serious and informative tone.

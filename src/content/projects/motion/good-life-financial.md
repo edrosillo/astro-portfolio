@@ -8,6 +8,4 @@ videoId: 'XTiT7bqYMEU'
 tags: ['finance', 'commercial', 'promotion']
 ---
 
-# GOOD LIFE FINANCIAL 60
-
 A 60-second commercial spot explaining financial planning services. Uses clear motion graphics to illustrate financial concepts.

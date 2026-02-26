@@ -8,6 +8,4 @@ videoId: 'jkOa9DQlSeM'
 tags: ['motion graphics', 'promotion', 'broadcast']
 ---
 
-# Fox Carolina Ingles School Supply Jam 15sec
-
 A condensed 15-second version of the School Supply Jam promotional spot. Designed for quick engagement and high rotation during commercial breaks.

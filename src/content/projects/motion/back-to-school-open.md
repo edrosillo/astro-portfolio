@@ -8,6 +8,4 @@ videoId: '6wq47yB5ACU'
 tags: ['education', 'broadcast', 'opener']
 ---
 
-# Back to School Open
-
 The opening sequence for special coverage of the back-to-school season. Features school-themed imagery and energetic animation.

@@ -8,8 +8,6 @@ liveUrl: 'https://edrosillo.github.io/fotomatic/'
 tags: ["html","css"]
 ---
 
-# Fotomatic
-
 A photography portfolio website featuring a masonry layout.
 
 [View Live Project](https://edrosillo.github.io/fotomatic/)

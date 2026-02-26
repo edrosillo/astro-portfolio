@@ -8,8 +8,6 @@ videoId: '6Pi40whsJiI'
 tags: ['commercial', 'branding', 'lifestyle']
 ---
 
-# Ingles Chef's Kitchen
-
 One of a series of commercial spots for Ingles Markets. This project required clean, appetizing visuals and clear information presentation for the recipe steps.
 
 ## Production Notes

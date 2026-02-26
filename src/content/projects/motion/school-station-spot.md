@@ -8,6 +8,4 @@ videoId: 'C3Mt8sX6UPc'
 tags: ['branding', 'education', 'broadcast']
 ---
 
-# FOX Carolina The School Station Spot
-
 A branding spot reinforcing FOX Carolina's commitment to education news and coverage. Features dynamic text animation and community imagery.

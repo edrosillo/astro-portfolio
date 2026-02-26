@@ -8,8 +8,6 @@ liveUrl: 'https://edrosillo.github.io/ColmarAcademy/'
 tags: ["html","css","responsive"]
 ---
 
-# Colmar Academy
-
 A comprehensive educational platform landing page.
 
 [View Live Project](https://edrosillo.github.io/ColmarAcademy/)

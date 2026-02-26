@@ -1,9 +1,9 @@
 ---
-title: 'Vector Logo Graphics IV'
+title: 'JFB HS Tournament of Bands Vector Logo Design'
 description: 'Custom vector logo design.'
-pubDate: '2023-10-31'
+pubDate: '2025-02-13'
 category: 'graphic'
-heroImage: '/images/design/design9.jpg'
+heroImage: '/images/design/design1.jpg'
 tags: ["vector","branding","logo"]
 ---
 

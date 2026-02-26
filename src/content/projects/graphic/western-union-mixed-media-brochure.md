@@ -1,5 +1,5 @@
 ---
-title: 'Mixed Media Brochure'
+title: 'Upstate Creative Photography Mixed Media Brochure'
 description: 'Folded brochure design combining various media.'
 pubDate: '2025-11-01'
 category: 'graphic'

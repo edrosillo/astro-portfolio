@@ -1,5 +1,5 @@
 ---
-title: 'Newspaper Ad'
+title: 'Fox Carolina WeatheRate Newspaper Ad'
 description: 'Classic newspaper advertisement layout.'
 pubDate: '2023-11-26'
 category: 'graphic'

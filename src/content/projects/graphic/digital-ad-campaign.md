@@ -1,5 +1,5 @@
 ---
-title: 'Digital Ad Campaign'
+title: 'Bon Secours Festival of Trees Digital Ad Campaign'
 description: 'Comprehensive digital advertising campaign assets.'
 pubDate: '2025-11-18'
 category: 'graphic'

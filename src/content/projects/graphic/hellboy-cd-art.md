@@ -1,5 +1,5 @@
 ---
-title: 'Vector Illustration'
+title: 'Hellboy Vector Illustration CD Art'
 description: 'Detailed vector illustration.'
 pubDate: '2023-05-07'
 category: 'graphic'

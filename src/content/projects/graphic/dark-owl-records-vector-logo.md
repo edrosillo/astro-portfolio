@@ -1,9 +1,9 @@
 ---
-title: 'Vector Logo Graphics II'
+title: 'Dark Owl Records Vector Logo Design'
 description: 'Custom vector logo design.'
-pubDate: '2024-03-07'
+pubDate: '2023-10-31'
 category: 'graphic'
-heroImage: '/images/design/design21.jpg'
+heroImage: '/images/design/design9.jpg'
 tags: ["vector","branding","logo"]
 ---
 

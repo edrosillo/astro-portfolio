@@ -1,5 +1,5 @@
 ---
-title: 'Vector Logo Graphics III'
+title: 'Upstate Creative Photography Vector Logo Design'
 description: 'Custom vector logo design.'
 pubDate: '2025-08-13'
 category: 'graphic'

@@ -1,5 +1,5 @@
 ---
-title: 'Social Media and Web Ads'
+title: 'Kandaka Care Social Media and Web Ads'
 description: 'Engaging ads for social media platforms.'
 pubDate: '2023-09-15'
 category: 'graphic'

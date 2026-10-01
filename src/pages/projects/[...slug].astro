@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import MainLayout from "../../layouts/MainLayout.astro";
 import GlitchText from "../../components/GlitchText.astro";
 import ConsolePlayer from "../../components/ConsolePlayer.astro";
@@ -7,13 +7,13 @@ import ConsolePlayer from "../../components/ConsolePlayer.astro";
 export async function getStaticPaths() {
     const projects = await getCollection("projects");
     return projects.map((project) => ({
-        params: { slug: project.slug },
+        params: { slug: project.id },
         props: project,
     }));
 }
 
 const project = Astro.props;
-const { Content } = await project.render();
+const { Content } = await render(project);
 ---
 
 <MainLayout title={project.data.title}>

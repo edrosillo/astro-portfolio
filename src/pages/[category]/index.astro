@@ -40,7 +40,7 @@ const title = categoryTitles[category as keyof typeof categoryTitles];
             {
                 projects.map((project) => (
                     <a
-                        href={`/projects/${project.slug}`}
+                        href={`/projects/${project.id}`}
                         class={`project-card ${category}`}
                     >
                         <div class="card-image">

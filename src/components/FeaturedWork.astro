@@ -14,8 +14,8 @@ const targetSlugs = [
 ];
 
 const featuredProjects = projects
-    .filter(project => targetSlugs.includes(project.slug))
-    .sort((a, b) => targetSlugs.indexOf(a.slug) - targetSlugs.indexOf(b.slug));
+    .filter(project => targetSlugs.includes(project.id))
+    .sort((a, b) => targetSlugs.indexOf(a.id) - targetSlugs.indexOf(b.id));
 ---
 
 <section class="featured-work">
@@ -28,7 +28,7 @@ const featuredProjects = projects
         {
             featuredProjects.map((project, index) => (
                 <a
-                    href={`/projects/${project.slug}`}
+                    href={`/projects/${project.id}`}
                     class="project-card fade-in-up"
                     style={`transition-delay: ${index * 0.1}s;`}
                 >

@@ -9,13 +9,13 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"@astrojs/check": "^0.9.10",
-		"@astrojs/cloudflare": "^14.3.3",
-		"astro": "^7.3.5",
+		"@astrojs/check": "^0.9.12",
+		"@astrojs/cloudflare": "^14.4.2",
+		"astro": "^7.4.2",
 		"typescript": "^5.9.3"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.3.8",
-		"wrangler": "^4.146.0"
+		"@biomejs/biome": "^2.6.3",
+		"wrangler": "^4.152.0"
 	}
 }

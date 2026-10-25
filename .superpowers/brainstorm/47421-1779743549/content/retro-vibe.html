@@ -1,0 +1,79 @@
+<h2>Which retro/gaming aesthetic speaks to you most?</h2>
+<p class="subtitle">You mentioned loving video games and glitchiness. Let's nail down the specific flavor — these are different design languages.</p>
+
+<div class="cards">
+  <div class="card" data-choice="arcade" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: #0a0a0a; padding: 2rem; text-align: center;">
+      <div style="font-family: monospace; color: #00ffff; text-shadow: 0 0 10px #00ffff;">
+        <div style="font-size: 0.7rem; letter-spacing: 0.3em; margin-bottom: 0.5rem;">INSERT COIN</div>
+        <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">PLAYER 1</div>
+        <div style="display: flex; justify-content: space-around; font-size: 0.7rem;">
+          <span>SCORE: 999999</span>
+          <span>HI-SCORE: 999999</span>
+        </div>
+        <div style="margin-top: 1rem; font-size: 0.6rem; animation: blink 1s infinite; color: #ff0;">PRESS START</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Arcade / 8-bit</h3>
+      <p>Pixel fonts, score counters, "INSERT COIN" prompts, chiptune vibes, bold primary colors, blocky UI elements</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="vhs" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: #0a0a0a; padding: 2rem; text-align: center;">
+      <div style="position: relative; font-family: monospace; color: #e0e0e0;">
+        <div style="font-size: 1.2rem; font-weight: bold; color: #ff3366; text-shadow: 2px 0 #00ffff, -2px 0 #ff3366; letter-spacing: 0.1em;">GLITCH WAVE</div>
+        <div style="margin-top: 0.5rem; font-size: 0.65rem; color: #a0a0a0;">REC ● 00:42:13</div>
+        <div style="margin-top: 0.8rem; height: 3px; background: repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(0,255,255,0.1) 1px, rgba(0,255,255,0.1) 2px); width: 100%;"></div>
+        <div style="margin-top: 0.5rem; font-size: 0.6rem; color: #666; letter-spacing: 0.2em;">TRACKING ▐▐▐▐▐▐▐▌░░░</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>VHS / Glitch Art</h3>
+      <p>Chromatic aberration, scan tracking lines, RGB split, distortion artifacts, tape noise, CRT warping, datamosh effects</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="cyberpunk" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: linear-gradient(180deg, #0a0014 0%, #1a0030 100%); padding: 2rem; text-align: center;">
+      <div style="font-family: monospace;">
+        <div style="font-size: 0.6rem; color: #7000ff; letter-spacing: 0.3em; margin-bottom: 0.5rem;">SYSTEM://ONLINE</div>
+        <div style="font-size: 1.3rem; font-weight: bold; color: #00ffff; text-shadow: 0 0 20px rgba(0,255,255,0.5); letter-spacing: 0.05em;">NEURAL LINK</div>
+        <div style="margin-top: 0.8rem; display: flex; gap: 0.3rem; justify-content: center;">
+          <span style="background: #00ffff; width: 40px; height: 3px; display: inline-block; box-shadow: 0 0 8px #00ffff;"></span>
+          <span style="background: #7000ff; width: 25px; height: 3px; display: inline-block; box-shadow: 0 0 8px #7000ff;"></span>
+          <span style="background: #ff3366; width: 15px; height: 3px; display: inline-block; box-shadow: 0 0 8px #ff3366;"></span>
+        </div>
+        <div style="margin-top: 0.8rem; font-size: 0.55rem; color: #444; letter-spacing: 0.15em;">ACCESS LEVEL: ADMIN</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Cyberpunk / Sci-Fi HUD</h3>
+      <p>Holographic UI, terminal aesthetics, data streams, neon accents on dark backgrounds, futuristic HUD overlays, matrix-style elements</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="hybrid" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: #0a0a0a; padding: 2rem; text-align: center;">
+      <div style="font-family: monospace;">
+        <div style="font-size: 0.6rem; color: #ff3366; text-shadow: 2px 0 #00ffff; letter-spacing: 0.2em;">LVL 99 ★</div>
+        <div style="font-size: 1.1rem; font-weight: bold; color: #00ffff; margin: 0.5rem 0; text-shadow: 0 0 15px rgba(0,255,255,0.4);">MIX IT ALL</div>
+        <div style="font-size: 0.6rem; color: #a0a0a0;">
+          <span style="color: #ff0;">⬛⬛⬛</span> ARCADE +
+          <span style="color: #ff3366;">▓▓▓</span> GLITCH +
+          <span style="color: #00ffff;">◆◆◆</span> CYBER
+        </div>
+        <div style="margin-top: 0.5rem; font-size: 0.5rem; color: #666;">THE BEST OF EVERYTHING</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Hybrid — Best of All</h3>
+      <p>Cherry-pick from all three: arcade-style UI elements, VHS/glitch visual effects, cyberpunk color palette and HUD overlays. Maximum retro impact.</p>
+    </div>
+  </div>
+</div>
+
+<style>
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+</style>

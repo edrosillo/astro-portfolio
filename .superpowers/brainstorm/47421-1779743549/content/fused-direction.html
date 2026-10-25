@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brutalist Glitch × High-Contrast — Design Direction</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #ffffff;
+    color: #0a0a0a;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  .frame-header {
+    background: #0a0a0a;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .frame-header span:last-child { color: #666; }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    color: #999;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  /* ── HERO MOCK ── */
+  .hero {
+    padding: 5rem 3rem 4rem;
+    position: relative;
+    border-bottom: 4px solid #000;
+    background:
+      radial-gradient(circle at 2px 2px, rgba(0,0,0,0.04) 1px, transparent 0) 0 0 / 30px 30px;
+  }
+
+  .hero-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: #000;
+    position: relative;
+    text-transform: uppercase;
+  }
+
+  .hero-name .glitch-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .hero-name .glitch-cyan {
+    color: #00ccff;
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+    transform: translate(3px, -2px);
+    opacity: 0.6;
+  }
+  .hero-name .glitch-pink {
+    color: #ff3366;
+    clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+    transform: translate(-3px, 2px);
+    opacity: 0.6;
+  }
+
+  .hero-role {
+    margin-top: 1.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 0.4rem 0;
+    border-top: 3px solid #000;
+    border-bottom: 3px solid #000;
+    display: inline-block;
+  }
+
+  .hero-tags {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+  .hero-tag {
+    background: #000;
+    color: #fff;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .hero-cta {
+    margin-top: 2rem;
+    display: inline-block;
+    border: 3px solid #000;
+    padding: 0.6rem 2rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #000;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.15s;
+  }
+  .hero-cta:hover {
+    background: #000;
+    color: #fff;
+  }
+
+  /* ── FEATURED WORK MOCK ── */
+  .work-section {
+    padding: 4rem 3rem;
+    border-bottom: 4px solid #000;
+  }
+
+  .work-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border: 3px solid #000;
+  }
+
+  .work-card {
+    border: 1px solid #000;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .work-card-image {
+    height: 220px;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: #bbb;
+    position: relative;
+    transition: all 0.3s;
+  }
+
+  .work-card-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.02) 2px,
+      rgba(0,0,0,0.02) 4px
+    );
+  }
+
+  .work-card:hover .work-card-image {
+    background: #000;
+  }
+  .work-card:hover .work-card-image span {
+    color: #00ccff;
+  }
+
+  .work-card-info {
+    padding: 1rem;
+    border-top: 2px solid #000;
+  }
+  .work-card-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+  .work-card-category {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    color: #999;
+    letter-spacing: 0.15em;
+    margin-top: 0.3rem;
+  }
+
+  /* ── SKILLS MOCK ── */
+  .skills-section {
+    padding: 4rem 3rem;
+    border-bottom: 4px solid #000;
+    background:
+      radial-gradient(circle at 2px 2px, rgba(0,0,0,0.04) 1px, transparent 0) 0 0 / 30px 30px;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 3px solid #000;
+    margin-top: 2rem;
+  }
+
+  .skill-cell {
+    border: 1px solid #000;
+    padding: 1.2rem;
+  }
+
+  .skill-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+
+  .skill-bar-track {
+    height: 6px;
+    background: #e0e0e0;
+    position: relative;
+  }
+  .skill-bar-fill {
+    height: 100%;
+    background: #000;
+    position: relative;
+  }
+  .skill-bar-fill.accent-cyan { background: #00ccff; }
+  .skill-bar-fill.accent-pink { background: #ff3366; }
+
+  .skill-level {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.55rem;
+    color: #999;
+    margin-top: 0.3rem;
+    text-align: right;
+  }
+
+  /* ── NAV MOCK ── */
+  .nav-mock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    border-bottom: 3px solid #000;
+    background: #fff;
+  }
+  .nav-logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: -0.03em;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .nav-link-active {
+    border-bottom: 3px solid #000;
+    padding-bottom: 2px;
+  }
+
+  /* ── ANNOTATIONS ── */
+  .annotation {
+    background: #fffde6;
+    border-left: 4px solid #000;
+    padding: 1rem 1.5rem;
+    margin: 2rem 3rem;
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+  .annotation strong {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+  }
+
+  .page-title {
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: #0a0a0a;
+    color: #fff;
+  }
+</style>
+</head>
+<body>
+
+<div class="page-title">BRUTALIST GLITCH × HIGH-CONTRAST — DESIGN MOCKUP</div>
+
+<div class="annotation">
+  <strong>DESIGN DIRECTION:</strong> White canvas, massive bold black typography, thick borders defining structure, RGB chromatic aberration on key headlines, monospace accents for the retro/tech layer. Accent colors (cyan #00ccff + hot pink #ff3366) used sparingly as punctuation — not decoration.
+</div>
+
+<!-- NAV -->
+<div class="nav-mock">
+  <div class="nav-logo">ER</div>
+  <div class="nav-links">
+    <span class="nav-link-active">Work</span>
+    <span>Graphic</span>
+    <span>Motion</span>
+    <span>Web</span>
+    <span>Contact</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="section-label">001 — INTRO</div>
+  <div class="hero-name">
+    EDDIE<br>ROSILLO
+    <div class="glitch-layer glitch-cyan" aria-hidden="true">EDDIE<br>ROSILLO</div>
+    <div class="glitch-layer glitch-pink" aria-hidden="true">EDDIE<br>ROSILLO</div>
+  </div>
+  <div class="hero-role">Creative Developer & Design Engineer</div>
+  <div class="hero-tags">
+    <span class="hero-tag">WEB</span>
+    <span class="hero-tag">MOTION</span>
+    <span class="hero-tag">GRAPHIC</span>
+  </div>
+  <div class="hero-cta">VIEW WORK →</div>
+</div>
+
+<div class="annotation">
+  <strong>GLITCH EFFECT:</strong> The chromatic aberration (cyan + pink offset layers) on the hero name creates that corrupted-data feeling. On hover or scroll-trigger, these layers would animate — shifting, clipping, flickering. On white, this hits way harder than on dark backgrounds because the contrast is extreme.
+</div>
+
+<!-- FEATURED WORK -->
+<div class="work-section">
+  <div class="section-label">002 — SELECTED WORK</div>
+  <div class="work-heading">Featured<br>Projects</div>
+  <div class="work-grid">
+    <div class="work-card">
+      <div class="work-card-image"><span>[PROJECT IMAGE]</span></div>
+      <div class="work-card-info">
+        <div class="work-card-title">Brew & Bloom</div>
+        <div class="work-card-category">WEB — 2025</div>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-card-image"><span>[PROJECT IMAGE]</span></div>
+      <div class="work-card-info">
+        <div class="work-card-title">Halo X Scrollytelling</div>
+        <div class="work-card-category">WEB — 2025</div>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-card-image"><span>[PROJECT IMAGE]</span></div>
+      <div class="work-card-info">
+        <div class="work-card-title">Word On The Beat</div>
+        <div class="work-card-category">MOTION — 2024</div>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-card-image"><span>[PROJECT IMAGE]</span></div>
+      <div class="work-card-info">
+        <div class="work-card-title">Hoth Wampas FC</div>
+        <div class="work-card-category">GRAPHIC — 2025</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="annotation">
+  <strong>WORK GRID:</strong> Thick black borders create a brutalist grid — no rounded corners, no soft shadows. Cards invert to black on hover, title shifts to cyan. The grid itself is the design element — no gaps, just structure.
+</div>
+
+<!-- SKILLS -->
+<div class="skills-section">
+  <div class="section-label">003 — CAPABILITIES</div>
+  <div class="work-heading">Player Stats</div>
+  <div class="skills-grid">
+    <div class="skill-cell">
+      <div class="skill-name">HTML / CSS</div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 95%;"></div></div>
+      <div class="skill-level">95/100</div>
+    </div>
+    <div class="skill-cell">
+      <div class="skill-name">JavaScript</div>
+      <div class="skill-bar-track"><div class="skill-bar-fill accent-cyan" style="width: 85%;"></div></div>
+      <div class="skill-level">85/100</div>
+    </div>
+    <div class="skill-cell">
+      <div class="skill-name">React</div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 80%;"></div></div>
+      <div class="skill-level">80/100</div>
+    </div>
+    <div class="skill-cell">
+      <div class="skill-name">Motion Design</div>
+      <div class="skill-bar-track"><div class="skill-bar-fill accent-pink" style="width: 90%;"></div></div>
+      <div class="skill-level">90/100</div>
+    </div>
+    <div class="skill-cell">
+      <div class="skill-name">After Effects</div>
+      <div class="skill-bar-track"><div class="skill-bar-fill accent-cyan" style="width: 88%;"></div></div>
+      <div class="skill-level">88/100</div>
+    </div>
+    <div class="skill-cell">
+      <div class="skill-name">Figma</div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+      <div class="skill-level">85/100</div>
+    </div>
+  </div>
+</div>
+
+<div class="annotation">
+  <strong>OVERALL SYSTEM:</strong> The design language is defined by: (1) thick black borders as primary structural element, (2) massive uppercase type with tight letter-spacing, (3) monospace labels for section numbers and metadata, (4) dot-grid subtle background texture, (5) cyan + pink used only for accent moments — glitch layers, select skill bars, hover states. Everything else is black and white. The restraint makes the color hits land harder.
+</div>
+
+</body>
+</html>
